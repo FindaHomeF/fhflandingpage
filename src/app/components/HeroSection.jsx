@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <div className="hero-outer w-full space-y-10 ">
         <div className="hero-inner w-4/6 mx-auto text-center space-y-5 pt-12">
-            <h2 className="text-[5.3rem] leading-[5.3rem] font-bold tracking-wider">Find your dream apartment today!</h2>
+            <h2 className="text-[5.3rem] leading-[5.3rem] font-bold ">Find your dream apartment today!</h2>
             <p className="text-2xl leading-[2.1rem] text-[#4C4C4C]">Experience stress-free living with our apartment options, 
                 designed for students and professionlas.
             </p>

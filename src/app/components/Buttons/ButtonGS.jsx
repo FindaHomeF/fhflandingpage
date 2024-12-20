@@ -15,6 +15,12 @@ export const FindaHome = () => {
 
 export const SeeAll = () => {
   return (
-    <Button className="uppercase bg-[#0D2740] rounded-full border border-[#0D2740]">See All <span></span></Button>
+    <Button className="uppercase bg-[#0D2740] rounded-full border border-[#0D2740]">See All </Button>
+  )
+}
+
+export const UnlockBtn = () => {
+  return (
+    <Button className="Capitalize bg-white rounded-full text-[#0D2740]">List Your Property </Button>
   )
 }

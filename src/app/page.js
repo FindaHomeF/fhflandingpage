@@ -3,6 +3,8 @@ import Features from "./components/Features";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Listings from "./components/Listings";
+import Testimonials from "./components/Testimonials";
+import Unlock from "./components/Unlock";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <Features/>
         <Listings/>
         <Decluttered/>
+        <Testimonials/>
+        <Unlock/>
       </main>
     </div>
   );
