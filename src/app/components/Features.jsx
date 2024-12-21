@@ -9,7 +9,7 @@ const Features = () => {
         <div className="features-inner w-5/6 mx-auto">
             <h3 className='text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Key Features</h3>
 
-            <div className="features-container flex items-center justify-between gap-x-10">
+            <div className="features-container flex flex-wrap md:flex-nowrap gap-y-5 items-center justify-between gap-x-10">
                 <div className="features-box-outer bg-[#F9FAFB] rounded-2xl p-5">
                     <div className="w-full rounded-lg overflow-hidden h-[13.75rem]">
                         <Image
@@ -17,7 +17,7 @@ const Features = () => {
                             width={330}
                             height={220}
                             alt='features-media-representation'
-                            className="object-cover w-full"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                     <div>
@@ -34,7 +34,7 @@ const Features = () => {
                             width={330}
                             height={220}
                             alt='features-media-representation'
-                            className="object-cover w-full"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                     <div>
@@ -53,7 +53,7 @@ const Features = () => {
                             width={330}
                             height={220}
                             alt='features-media-representation'
-                            className="object-cover w-full"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                     <div>

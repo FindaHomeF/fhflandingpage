@@ -13,7 +13,7 @@ const Listings = () => {
         <div className="listings-inner w-5/6 mx-auto">
             <h3 className='text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Property listings</h3>
 
-            <div className="listings-container flex items-center justify-between gap-x-5">
+            <div className="listings-container flex flex-wrap md:flex-nowrap gap-y-5 items-center justify-between gap-x-5">
                 {[List1, List2, List3, List4].map((e,index)=>(
                     <div className="listings-box rounded-2xl overflow-hidden border border-[#00000033]" key={index}>
                         <div className="listing-image h-[13.75rem]">

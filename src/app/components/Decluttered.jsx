@@ -10,9 +10,9 @@ const Decluttered = () => {
         <div className="declutter-inner w-5/6 mx-auto">
             <h3 className='text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Decluttered Items</h3>
 
-            <div className="declutter-container flex items-center justify-between gap-x-7">
+            <div className="declutter-container flex flex-wrap md:flex-nowrap gap-y-5 items-center justify-between gap-x-7">
                 {[Declutter, Declutter, Declutter].map((e, index)=>(
-                    <div className="declutter-box-outer bg-[#F9FAFB] rounded-2xl overflow-hidden" key={index}>
+                    <div className="declutter-box-outer bg-[#F9FAFB] rounded-2xl overflow-hidden w-full md:w-auto" key={index}>
                         <div className="w-full rounded-lg overflow-hidden h-[31.93rem]">
                             <Image
                                 src={e}
