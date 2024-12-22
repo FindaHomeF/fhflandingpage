@@ -11,7 +11,7 @@ const Listings = () => {
   return (
     <div className="listings-outer">
         <div className="listings-inner w-5/6 mx-auto">
-            <h3 className='text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Property listings</h3>
+            <h3 className='text-2xl md:text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-3 md:pb-7'>Property listings</h3>
 
             <div className="listings-container flex flex-wrap md:flex-nowrap gap-y-5 items-center justify-between gap-x-5">
                 {[List1, List2, List3, List4].map((e,index)=>(
@@ -26,8 +26,8 @@ const Listings = () => {
                         </div>
                         <div className="listing-info p-3">
                             <div className="info-top border-b border-b-[#00000033] pb-2 space-y-1">
-                                <h4 className="price text-[#FDA51E] text-2xl font-semibold">NGN 120,000</h4>
-                                <h5 className="capitalize text-black text-2xl font-semibold">Marble Lodge</h5>
+                                <h4 className="price text-[#FDA51E] text-xl md:text-2xl font-semibold">NGN 120,000</h4>
+                                <h5 className="capitalize text-black text-xl md:text-2xl font-semibold">Marble Lodge</h5>
                             </div>
  
                             <div className="info-bottom pt-2 space-y-2 font-normal text-sm text-[#00010399]">
@@ -39,7 +39,7 @@ const Listings = () => {
                 ))}
             </div>
 
-            <div className="mx-auto w-full flex justify-center items-center mt-12">
+            <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
                 <SeeAll/>
             </div>
         </div>

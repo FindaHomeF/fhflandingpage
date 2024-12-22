@@ -8,7 +8,7 @@ const Testimonials = () => {
   return (
     <div className="testi-outer">
         <div className="testi-inner w-5/6 mx-auto mb-10">
-            <h3 className='text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Testimonials</h3>
+            <h3 className='text-2xl md:text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Testimonials</h3>
 
             <div className="testi-outer w-full">
                 <div className="testi-inner w-full md:w-3/6 mx-auto flex flex-col justify-center items-center">
@@ -26,7 +26,7 @@ const Testimonials = () => {
                     <div className="main-testi-outer flex items-center justify-between w-full ">
                         <FiArrowLeftCircle className="text-[#00000066] text-2xl"/>
                         <div className="test-textandimage ">
-                            <p className="text-center font-normal text-black text-base md:text-xl my-10"> 
+                            <p className="text-center font-normal text-black text-base md:text-xl my-7 md:my-10"> 
                                 Provides a comprehensive and detailed overview of your rental property, 
                                 showcasing its best features, and amenities. 
                                 Selling unwanted items is a great way to free up space, 
