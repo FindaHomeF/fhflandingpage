@@ -1,16 +1,16 @@
-import { SeeAll } from "./Buttons/ButtonGS"
+import { SeeAll } from "../global/Buttons/ButtonGS"
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdBed } from "react-icons/md";
-import List1 from '../../../public/listing1.png';
-import List2 from '../../../public/listing2.png';
-import List3 from '../../../public/listing3.png';
-import List4 from '../../../public/listing4.png';
+import List1 from '../../../../public/listing1.png';
+import List2 from '../../../../public/listing2.png';
+import List3 from '../../../../public/listing3.png';
+import List4 from '../../../../public/listing4.png';
 import Image from "next/image";
 
 const Listings = () => {
   return (
     <div className="listings-outer">
-        <div className="listings-inner w-5/6 mx-auto">
+        <div className="listings-inner w-[90%] md:w-5/6 mx-auto">
             <h3 className='text-2xl md:text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-3 md:pb-7'>Property listings</h3>
 
             <div className="listings-container flex flex-wrap md:flex-nowrap gap-y-5 items-center justify-between gap-x-5">

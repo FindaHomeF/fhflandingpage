@@ -1,13 +1,13 @@
 import Image from "next/image"
-import UN1 from "../../../public/unlock1.jpeg"
-import UN2 from "../../../public/unlock2.png"
-import UNP from "../../../public/unlockplay.svg"
-import { UnlockBtn } from "./Buttons/ButtonGS"
+import UN1 from "../../../../public/unlock1.jpeg"
+import UN2 from "../../../../public/unlock2.png"
+import UNP from "../../../../public/unlockplay.svg"
+import { UnlockBtn } from "../global/Buttons/ButtonGS"
 
 const Unlock = () => {
   return (
-    <div className="unlock-outer bg-[#0D2740] py-20 pb-[8.5rem]">
-        <div className="unlock-inner w-5/6 mx-auto block md:flex items-start justify-between gap-x-10">
+    <div className="unlock-outer bg-[#0D2740] py-10 md:py-20 pb-10 md:pb-[8.5rem]">
+        <div className="unlock-inner w-[90%] md:w-5/6 mx-auto block md:flex items-start justify-between gap-x-10">
             <div className="unlock-left relative w-full md:w-3/6">
                 <div className="unlock1 relative w-[90%] md:w-4/6 h-[34rem] rounded-2xl overflow-hidden">
                     <Image

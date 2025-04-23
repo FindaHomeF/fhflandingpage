@@ -2,6 +2,7 @@ import { Mulish } from "next/font/google";
 import "./globals.css";
 import { Abhaya_Libre } from 'next/font/google';
 
+
 // Initialize the font with desired subsets and weights
 const mulish = Mulish({
   subsets: ['latin'],
@@ -26,13 +27,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
-    <html lang="en">
-      <body
-        className={`${mulish.className}  antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${mulish.className}  antialiased`}
+        >   
+         {children}
+        </body>
+      </html>
   );
 }

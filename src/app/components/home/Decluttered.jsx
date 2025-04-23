@@ -1,20 +1,19 @@
-
-import Declutter from '../../../public/declutter1.png'
+import Declutter from '../../../../public/declutter1.png'
 import { MdSell } from "react-icons/md";
-import { SeeAll } from './Buttons/ButtonGS';
+import { SeeAll } from '../global/Buttons/ButtonGS';
 import Image from 'next/image';
 
 
 const Decluttered = () => {
   return (
     <div className="declutter-outer">
-        <div className="declutter-inner w-5/6 mx-auto">
+        <div className="declutter-inner w-[90%] md:w-5/6 mx-auto">
             <h3 className='text-2xl md:text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-3 md:pb-7'>Decluttered Items</h3>
 
             <div className="declutter-container flex flex-wrap md:flex-nowrap gap-y-5 items-center justify-between gap-x-7">
                 {[Declutter, Declutter, Declutter].map((e, index)=>(
                     <div className="declutter-box-outer bg-[#F9FAFB] rounded-2xl overflow-hidden w-full md:w-auto" key={index}>
-                        <div className="w-full rounded-lg overflow-hidden h-[31.93rem]">
+                        <div className="w-full rounded-lg overflow-hidden h-[15rem] md:h-[31.93rem]">
                             <Image
                                 src={e}
                                 width={360}
