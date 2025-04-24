@@ -9,5 +9,10 @@ body {
 @layer base {
   :root {
     --radius: 0.5rem;
+    --gray:#646566;
+    --primary:#0D2740;
+    --secondary:#FF9500;
+    --tetiary:#292D32;
+    --light-sec:#00010399;
   }
 }

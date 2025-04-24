@@ -9,6 +9,7 @@ import HeroSection from "../components/home/HeroSection";
 import Listings from "../components/home/Listings";
 import Testimonials from "../components/home/Testimonials";
 import Unlock from "../components/home/Unlock";
+import Steps from "../components/home/Steps";
 
 
 
@@ -20,14 +21,15 @@ const HomePage = () => {
         {/* {loading?
           <Loader container={container} item={item} Logo={Logo}/>
           : */}
-        <main className="space-y-14 md:space-y-16">
+        <main className="space-y-16 md:space-y-16">
           <div className="space-y-10">
             <Header/>
             <HeroSection/>
           </div>
-          {/* <Features/> */}
           <About/>
+          <Features/>
           <Listings/>
+          <Steps/>
           <Decluttered/>
           <Testimonials/>
           <Unlock/>

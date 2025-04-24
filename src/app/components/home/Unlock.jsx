@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import UN1 from "../../../../public/unlock1.jpeg"
 import UN2 from "../../../../public/unlock2.png"
@@ -50,16 +51,32 @@ const Unlock = () => {
             <div className="unlock-right text-white w-full md:w-3/6 space-y-7 mt-16 ">
                 <div className="space-y-2">
                     <h3 className="font-bold text-2xl md:text-4xl pb-3">Unlock Your Dream Home. Browse Our Curated Property Listings and Decluttering Solutions.</h3>
-                    <p className="text-base md:text-xl font-normal pb-1">Browse our curated property listings, featuring high-quality photos and detailed descriptions. From cozy apartments to spacious houses, find your dream house or list your property with us today!</p>
-                    <UnlockBtn text={'List Your Property'}/>
+                    <p className="text-base md:text-base font-normal pb-1 text-[#ffffffb2]">Browse our curated property listings, featuring high-quality photos and detailed descriptions. From cozy apartments to spacious houses, find your dream house or list your property with us today!</p>
+                    <UnlockBtn text={'Send Us a Message!'}/>
                 </div>
-                <div className="space-y-2">
+
+                <div className="space-y-3">
+                    <div>
+                        <h3 className="text-white font-semibold text-xl md:text-2xl capitalize">Don't Miss out. Join Our Waitlist today!</h3>
+                        <p className="text-sm font-normal text-[#ffffffb2]">Be among one of the early pioneers to access our platform once we launch. There might just be perks in it for you</p>
+                    </div>
+                    
+                    <form action="" className="flex items-center gap-x-3">
+                        <input placeholder="Enter your email" 
+                            type="email" name="" 
+                            id="" 
+                            className="rounded-md h-10 w-5/6 text-black text-sm px-5 cursor-pointer outline-none border-none"
+                        />
+                        <Button className="rounded-md bg-secondary w-1/6 text-sm font-semibold h-10">Join</Button>
+                    </form>
+                </div>
+                {/* <div className="space-y-2">
                     <p className="text-base md:text-xl font-normal pb-2">
                         Declutter and earn! Our platform helps you turn unwanted items 
                         into cash. Simply list your gently used furniture, appliances, and household goods, 
                         and we’ll connect you with  buyers looking for great deals.</p>
                     <UnlockBtn text={'Declutter Now'}/>
-                </div>
+                </div> */}
                 
             </div>
         </div>

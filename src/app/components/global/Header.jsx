@@ -35,7 +35,7 @@ const Header = () => {
         </div>
 
         <div className="menu-outer w-auto hidden md:block">
-          <ul className="menu-inner uppercase gap-x-7 text-sm font-medium tracking-wide flex w-full items-center">
+          <ul className="menu-inner uppercase gap-x-7 text-sm font-medium tracking-wide cursor-pointer flex w-full items-center">
             <li>About Us</li>
             <li className="flex items-center gap-x-2">Products <FaAngleDown /></li>
             <li>Testimonial</li>

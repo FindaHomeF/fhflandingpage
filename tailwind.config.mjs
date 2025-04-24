@@ -10,7 +10,12 @@ export default {
   	extend: {
   		colors: {
   			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
+  			foreground: 'var(--foreground)',
+			gray:'var(--gray)',
+			primary:'var(--primary)',
+			secondary:'var(--secondary)',
+			tetiary:'var(--tetiary)',
+			lightSec:'var(--light-sec)',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
