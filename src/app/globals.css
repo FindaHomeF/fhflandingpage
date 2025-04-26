@@ -5,6 +5,15 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.fcta{
+  background: url('../../public/footercta.jpg');
+}
+.section-head{
+  @apply text-2xl md:text-[2.5rem] font-semibold capitalize leading-[1.2];
+}
+.section-para{
+  @apply text-base md:text-lg font-medium;
+}
 
 @layer base {
   :root {

@@ -16,7 +16,7 @@ const Footer = () => {
                         className="object-cover"
                     />
                 </div>
-                <p className="text-xl font-normal w-5/6 hidden md:block">
+                <p className="text-xl font-normal w-5/6 hidden md:block text-[#4C4C4C]">
                     Experience stress-free living with 
                     our fully furnished, all-inclusive apartments, designed for students and professionals
                 </p>

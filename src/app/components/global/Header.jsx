@@ -10,6 +10,7 @@ import { FaWarehouse } from "react-icons/fa";
 import { useState } from "react"
 import { LuWarehouse } from "react-icons/lu";
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 const Header = () => {
   const [active, setActive] = useState(false)
@@ -17,26 +18,30 @@ const Header = () => {
   return (
     <div className="header-outer w-[90%] mx-auto font-medium -mb-10 md:mb-0 relative">
       <div className="header-inner w-full flex justify-between items-center md:my-5 my-4#0D2740">
-        <motion.div className="logo-container w-1/6 hidden md:block" layoutId='logo-animate'>
-          <Image src={Logo}
-           alt="fhflogo"
-           width={200}
-           height={54}
-          />
-        </motion.div>
+        <Link href={'/'} className='w-1/6 hidden md:block'>
+          <motion.div className="logo-container w-full " layoutId='logo-animate'>
+            <Image src={Logo}
+            alt="fhflogo"
+            width={200}
+            height={54}
+            />
+          </motion.div>
+        </Link>
 
-        <div className="w-2/6 overflow-hidden relative -left-5 md:hidden">
-          <Image src={LogoM}
-           alt="fhflogo"
-           width={200}
-           height={54}
-           className="object-cover"
-          />
-        </div>
+        <Link href={'/'}>
+          <div className="w-2/6 overflow-hidden relative -left-5 md:hidden">
+            <Image src={LogoM}
+            alt="fhflogo"
+            width={200}
+            height={54}
+            className="object-cover"
+            />
+          </div>
+        </Link>
 
         <div className="menu-outer w-auto hidden md:block">
           <ul className="menu-inner uppercase gap-x-7 text-sm font-medium tracking-wide cursor-pointer flex w-full items-center">
-            <li>About Us</li>
+            <Link href='/about'><li>About Us</li></Link>
             <li className="flex items-center gap-x-2">Products <FaAngleDown /></li>
             <li>Testimonial</li>
             <li>About</li>
