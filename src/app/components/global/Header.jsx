@@ -40,11 +40,17 @@ const Header = () => {
         </Link>
 
         <div className="menu-outer w-auto hidden md:block">
-          <ul className="menu-inner uppercase gap-x-7 text-sm font-medium tracking-wide cursor-pointer flex w-full items-center">
+          <ul className="menu-inner h-10 px-5  uppercase gap-x-7 text-sm font-medium tracking-wide cursor-pointer flex w-full items-center">
             <Link href='/about'><li>About Us</li></Link>
-            <li className="flex items-center gap-x-2">Products <FaAngleDown /></li>
+            <li className=" relative group h-full transition-all ease-linear duration-300">
+              <div className="flex items-center gap-x-2 relative min-h-full">Products <FaAngleDown /></div> 
+              <ul className="absolute transition-all ease-linear duration-300 text-white bg-tetiary space-y-2 border-t-2 border-t-secondary w-fit px-3 py-2 text-nowrap group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none">
+                <Link href={'/apartments'}><li >Apartment Listings</li></Link>
+                <li>Hire for a service</li>
+                <li>decluttering</li>
+              </ul>
+            </li>
             <li>Testimonial</li>
-            <li>About</li>
             <li>Contact Us</li>
           </ul>
         </div>

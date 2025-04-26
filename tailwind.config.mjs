@@ -16,6 +16,7 @@ export default {
 			secondary:'var(--secondary)',
 			tetiary:'var(--tetiary)',
 			lightSec:'var(--light-sec)',
+			graySec:'var(--gray-secondary)',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

@@ -145,7 +145,7 @@ const Team = () => {
 
                                 <p className="font-normal text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                             
-                                <div className="socials mt-2 flex items-center gap-x-2 text-lg cursor-pointer">
+                                <div className="socials pt-2 flex items-center gap-x-2 text-2xl cursor-pointer">
                                     <Link href={'#'}><FaLinkedin/></Link>
                                     <Link href={'#'}><FaSquareXTwitter/></Link>
                                 </div>

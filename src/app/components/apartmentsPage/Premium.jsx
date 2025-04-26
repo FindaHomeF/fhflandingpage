@@ -1,0 +1,26 @@
+import ListingBox from "../global/ListingBox"
+import List1 from '../../../../public/listing1.png';
+import List2 from '../../../../public/listing2.png';
+import List3 from '../../../../public/listing3.png';
+import List4 from '../../../../public/listing4.png';
+
+const Premium = () => {
+  return (
+    <div className="full bg-primary py-16">
+        <div className="mx-auto w-5/6 space-y-7">
+            <h3 className="section-head text-center text-white">Premium Student Apartments</h3>
+            <div className="w-full grid-cols-2 grid md:grid-cols-4 gap-x-5">
+                {[List1, List2, List3, List4].map((list, index)=>(
+                    <div key={index}>
+                        <ListingBox image={list}/>
+                    </div>
+                ))}
+            </div>
+            
+        </div>
+
+    </div>
+  )
+}
+
+export default Premium
