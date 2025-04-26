@@ -16,7 +16,7 @@ const HeroSection = () => {
                 {/* Experience stress-free living with our apartment options, 
                 designed for students and professionlas. */}
             </p>
-            <div className="hero-btn flex pt-4 md:pt-2 gap-x-3 items-center w-full justify-center">
+            <div className="hero-btns flex pt-4 md:pt-2 gap-x-3 items-center w-full !justify-center">
                 <ButtonGS/>
                 <FindaHome/>
             </div>
