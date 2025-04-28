@@ -17,6 +17,7 @@ export default {
 			tetiary:'var(--tetiary)',
 			lightSec:'var(--light-sec)',
 			graySec:'var(--gray-secondary)',
+			lightGray:'var(--light-gray)',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

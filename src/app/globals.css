@@ -27,7 +27,7 @@ input{
   @apply w-3/6 uppercase font-medium h-full rounded-full transition-all ease-linear duration-300;
 }
 .cat-btn{
-  @apply w-fit h-10 bg-gray text-base font-medium rounded-full ;
+  @apply w-fit h-10 bg-lightGray text-[#212529] text-sm font-semibold rounded-full hover:text-white transition-all ease-in duration-300;
 }
 
 
@@ -36,6 +36,7 @@ input{
   :root {
     --radius: 0.5rem;
     --gray:#646566;
+    --light-gray:#E9ECEF;
     --gray-secondary:#4C4C4C;
     --primary:#0D2740;
     --secondary:#FF9500;

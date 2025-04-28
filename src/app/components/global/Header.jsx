@@ -46,8 +46,8 @@ const Header = () => {
               <div className="flex items-center gap-x-2 relative min-h-full">Products <FaAngleDown /></div> 
               <ul className="absolute transition-all ease-linear duration-300 text-white bg-tetiary space-y-2 border-t-2 border-t-secondary w-fit px-3 py-2 text-nowrap group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none">
                 <Link href={'/apartments'}><li >Apartment Listings</li></Link>
-                <li>Hire for a service</li>
-                <li>decluttering</li>
+                <Link href={'/service'} ><li className="mt-2">Hire for a service</li></Link>
+                <Link href={'/decluttering'} ><li className="mt-2">decluttering</li></Link>
               </ul>
             </li>
             <li>Testimonial</li>
