@@ -4,13 +4,16 @@ import { GoArrowUpRight } from "react-icons/go";
 
 export const ButtonGS = () => {
   return (
-    <Button className="uppercase bg-[#0D2740] rounded-full  h-12 w-[12rem]">Start Your Search</Button>
+    <Button className="uppercase bg-[#0D2740] 
+    rounded-full  h-12 w-[12rem]">Start Your Search</Button>
   )
 }
 
 export const FindaHome = () => {
   return (
-    <Button className="uppercase bg-transparent rounded-full h-12 w-[12rem] border border-[#0D2740] text-[#0D2740]">List Your Property</Button>
+    <Button className="uppercase bg-transparent rounded-full h-12 
+    w-[12rem] border border-[#0D2740] text-[#0D2740] 
+    hover:bg-black/0 lg:hover-bg-[#0D2740]/10">List Your Property</Button>
   )
 }
 
