@@ -11,7 +11,8 @@ const Hero = ({placeholder, mainText, subText, btn1, btn2}) => {
 
             <div className="hero-btns h-12 w-3/6 mx-auto flex gap-x-3">
                 <Button className="hero-btn bg-primary text-white hover:bg-secondary">{btn1}</Button>
-                <Button className="hero-btn bg-transparent border border-primary text-primary hover:bg-primary hover:text-white">{btn2}</Button>
+                <Button className="hero-btn bg-transparent border border-primary 
+                text-primary hover:bg-blue-700/10">{btn2}</Button>
             </div>
 
             <div>

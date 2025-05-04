@@ -13,18 +13,18 @@ const page = () => {
     <div className="bg-white w-full overflow-x-hidden scroll-smooth transition-all ease-linear duration-500">
         <Header/>
         <main className="space-y-16 md:space-y-20 pt-3 md:pt-16">
-            <Hero 
-                placeholder={'What apartment are you looking for?'}
-                mainText={'Find Your Perfect Home'}
-                subText={'View verified apartments and properties near FUTA'}
-                btn1={'list an item'}
-                btn2={'browse categories'}
-            />
-            <Available/>
-            <Premium/>
-            <Categories/>
-            <Testimonials/>
-            <FooterCta/>
+          <Hero 
+              placeholder={'What apartment are you looking for?'}
+              mainText={'Find Your Perfect Home'}
+              subText={'View verified apartments and properties near FUTA'}
+              btn1={'list an item'}
+              btn2={'browse categories'}
+          />
+          <Available/>
+          <Premium/>
+          <Categories/>
+          <Testimonials/>
+          <FooterCta/>
         </main>
         <footer>
           <Footer/>
