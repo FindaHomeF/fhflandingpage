@@ -26,5 +26,41 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.w-93p-mx-auto': {
+        width: '93%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        '@screen lg': {
+          width: '90%',
+        },
+        '@screen 2xl': {
+          width: '85%',
+        }
+        },
+        '.w-90p-mx-auto': {
+        width: '90%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        },
+        '.flex-itc': {
+          display: 'flex',
+          alignItems: 'center',
+        },
+        '.flex-itc-jub': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        },
+        '.flex-itc-juc': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        },
+      });
+      },
+      require("tailwindcss-animate")
+],
 };
