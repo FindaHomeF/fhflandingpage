@@ -1,5 +1,6 @@
 import React from 'react'
 import ServiceCard from './service-card'
+import { SeeAll } from '../global/Buttons/ButtonGS'
 
 const AvailableServices = () => {
   return (
@@ -13,9 +14,13 @@ const AvailableServices = () => {
         <div className='mt-6 md:mt-10 lg:mt-14
         w-full grid grid-cols-2 md:grid-cols-4
         gap-5'>
-            {[...Array(4)].map((_, index) => (
-            <ServiceCard key={index} />
-            ))}
+          {[...Array(4)].map((_, index) => (
+          <ServiceCard key={index} />
+          ))}
+        </div>
+
+        <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
+          <SeeAll/>
         </div>
 
     </div>

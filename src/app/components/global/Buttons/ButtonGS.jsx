@@ -5,7 +5,7 @@ import { GoArrowUpRight } from "react-icons/go";
 export const ButtonGS = ({ content="Start Your Search", uppercase = true }) => {
   return (
     <Button className={` ${uppercase && "uppercase"} bg-[#0D2740] 
-    rounded-full  h-12 w-[12rem] `}>{ content }</Button>
+    rounded-full h-12 w-[12rem] `}>{ content }</Button>
   )
 }
 

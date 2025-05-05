@@ -69,7 +69,7 @@ const ServiceCard = () => {
                 </p>
             </div>
 
-            <div className='mt-3 flex-col md:flex-row items-center gap-3'>
+            <div className='mt-4 flex flex-col md:flex-row items-center gap-3'>
                 <div className=''>
                     <ButtonGS
                     content="Book Now"
@@ -77,9 +77,13 @@ const ServiceCard = () => {
                     />
                 </div>
 
-                <div className='flex-itc gap-3'>
-                    <IoBookmarksOutline />
-                    <LiaShareAltSolid />
+                <div className='w-fit flex-itc gap-3'>
+                    <IoBookmarksOutline size={22} 
+                        className='cursor-pointer' 
+                    />
+                    <LiaShareAltSolid size={27}
+                        className='cursor-pointer' 
+                    />
                 </div>
             </div>
         </div>
