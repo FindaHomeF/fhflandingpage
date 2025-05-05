@@ -1,3 +1,4 @@
+import { ButtonGS } from '@/app/components/global/Buttons/ButtonGS'
 import { MapPin } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
@@ -82,7 +83,7 @@ const ImagesAndDescriptionDisplay = () => {
         </div>
 
         <div className='mt-5'>
-            <p className='text-sm md:text-base text-black/60'>
+            <p className='text-sm md:text-base lg:text-lg text-black/60'>
             Lorem ipsum bla blah blah. Lorem ipsum blah blah blah.
              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. 
              Lorem ipsum bla blah blah. Lorem ipsum blah blah blah. 
@@ -90,6 +91,16 @@ const ImagesAndDescriptionDisplay = () => {
              Lorem ipsum bla blah blah. Lorem ipsum blah blah blah. 
              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
             </p>
+        </div>
+
+        <div>
+            <ButtonGS 
+            uppercase={false}
+            content='Add to Cart'
+            className='mt-5 lg:!w-fit lg:px-32 lg:mt-10
+            max-lg:w-full max-lg:rounded-2xl
+            font-bold'
+            />
         </div>
     </div>
 
