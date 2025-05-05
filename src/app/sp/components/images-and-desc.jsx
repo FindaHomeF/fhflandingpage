@@ -1,16 +1,69 @@
+
+"use client"
 import { ButtonGS } from '@/app/components/global/Buttons/ButtonGS'
 import { MapPin } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaRegStar, FaStar } from 'react-icons/fa'
 
 const ImagesAndDescriptionDisplay = () => {
+    const [activeImage, setActiveImage] = useState(0);
+
+    const imagePaths = [
+        '/declutter1.png',
+        '/hero-image.jpeg',
+        '/declutter1.png',
+        '/hero-image.jpeg',
+    ];
+
   return (
     <>
     <div className='md:mt-5 w-90p-mx-auto flex-itc-juc'>
-        
-        
-        {/* IMADE DISPLAY */}
+        {/* IMAGE DISPLAY */}
+        <div className='w-full lg:max-w-[80vw] mx-auto'>
+          <div className='lg:mt-8 w-full h-[30rem] flex flex-col lg:flex-row gap-5'>
+            {/* Main Image */}
+            <div className='w-full lg:basis-[55%] h-[18rem] lg:h-[30rem] rounded-2xl'>
+              <Image
+                src={`/declutter1.png`} // Use active image
+                width={300}
+                height={400}
+                alt='declutter-media-representation'
+                className="object-cover w-full h-full group-hover:scale-105 
+                transition-all ease-linear duration-300 rounded-2xl"
+              />
+            </div>
+
+            {/* Thumbnail Gallery */}
+            <div className='max-lg:pl-2 h-[30rem] no-scrollbar max-lg:flex 
+            max-lg:overflow-x-auto lg:grid grid-cols-1 lg:grid-cols-2 gap-3'>
+              {[...Array(4)].map((_, index) => (
+                <div 
+                  key={index}
+                  onClick={() => setActiveImage(index)}
+                  className={`
+                    w-[8rem] h-[8rem] md:w-[14.5rem] md:h-[14.5rem]
+                    flex-shrink-0 cursor-pointer transition-all duration-200 ${
+                    activeImage === index 
+                      ? 'ring-4 ring-secondary' 
+                      : 'hover:ring-2 hover:ring-secondary'
+                  } rounded-2xl`}
+                >
+                  <Image
+                    src={imagePaths[activeImage]}
+                    width={800}
+                    height={600}
+                    alt={`property-image-${activeImage + 1}`}
+                    className="w-[8rem] h-[8rem] md:w-[14.5rem] md:h-[14.5rem] 
+                    object-cover group-hover:scale-105 transition-all ease-linear duration-300 rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+    </div>
+    {/* <div className='md:mt-5 w-90p-mx-auto flex-itc-juc'>
         <div className='w-full lg:max-w-[80vw] mx-auto'>
             <div className='lg:mt-8 w-full h-[30rem] flex flex-col lg:flex-row gap-5'>
                 <div className='w-full lg:basis-[55%] h-[18rem] lg:h-[30rem] rounded-2xl'>
@@ -45,10 +98,10 @@ const ImagesAndDescriptionDisplay = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
-            {/* DESC DISPLAY */}
-    <div className='mt-8 w-90p-mx-auto lg:max-w-[80vw] mx-auto'>
+    {/* DESC DISPLAY */}
+    <div className='lg:mt-8 w-90p-mx-auto lg:max-w-[80vw] mx-auto'>
         <div className='bg-secondary w-fit py-1 text-white px-4 rounded-full'>
             Verified
         </div>

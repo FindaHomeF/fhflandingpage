@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Logo from "../../../../public/Logo/Logosvg.svg"
 import { FaLinkedin, FaWhatsappSquare,FaInstagramSquare,FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
@@ -55,7 +56,8 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <h6 className="text-xs md:text-base font-normal text-center text-black mt-10 md:mt-16">2024 FindaHomeFuta. All rights reserved.</h6>
+        <h6 className="text-xs md:text-base font-normal text-center text-black mt-10 md:mt-16">
+            {new Date().getFullYear()} FindaHomeFuta. All rights reserved.</h6>
     </div>
   )
 }
