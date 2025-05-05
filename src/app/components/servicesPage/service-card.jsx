@@ -23,8 +23,8 @@ const ServiceCard = () => {
                 Carpenter
             </h3>
 
-            <div className='mt-3 w-full flex-itc-jub flex-wrap gap-2 md:gap-6'>
-                <div className="flex-itc gap-1 md:gap-3">
+            <div className='mt-3 w-full flex-itc-jub flex-wrap gap-2 md:gap-3'>
+                <div className="flex-itc gap-1 md:gap-2">
                     {/* icon */}
                     <MapPin 
                     color="#FF9500" 
@@ -36,7 +36,7 @@ const ServiceCard = () => {
                     </p>
                 </div>
 
-                <div className="flex-itc gap-1 md:gap-3">
+                <div className="flex-itc gap-1 md:gap-2">
                     {/* icon */}
                     <Star 
                     color="#FF9500" 
@@ -49,7 +49,7 @@ const ServiceCard = () => {
                 </div>
             </div>
 
-            <div className="mt-2 flex-itc gap-1 md:gap-3">
+            <div className="mt-2 flex-itc gap-1 md:gap-2">
                 {/* icon */}
                 <Clock12 
                 color="#FF9500" 

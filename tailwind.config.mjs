@@ -18,6 +18,7 @@ export default {
 			lightSec:'var(--light-sec)',
 			graySec:'var(--gray-secondary)',
 			lightGray:'var(--light-gray)',
+			darkBlue:'#0D2740',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
