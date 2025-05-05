@@ -9,7 +9,7 @@ input{
   @apply outline-none;
 }
 .fcta{
-  background: url('../../public/footercta.jpg');
+  background: url('../../public/cta-banner.jpg');
 }
 .hero-head{
   @apply text-3xl md:text-7xl font-bold leading-snug;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { SeeAll } from '../global/Buttons/ButtonGS'
 import ServiceCard from './service-card'
+import { Button } from '@/components/ui/button'
 
 const Categories = () => {
   return (

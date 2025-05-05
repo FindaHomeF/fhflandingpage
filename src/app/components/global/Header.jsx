@@ -58,7 +58,7 @@ const Header = () => {
         <div className="text-base md:flex items-center gap-x-3 w-fit hidden ">
           <Button className="bg-transparent shadow-none text-black flex 
           items-center gap-x-2 hover:bg-transparent group h-[3.375rem] w-fit">
-            LOGIN <GoArrowUpRight className="group-hover:animate-bounce" /></Button>
+            JOIN WAITLIST <GoArrowUpRight className="group-hover:animate-bounce" /></Button>
           <ButtonGS/>
         </div>
 

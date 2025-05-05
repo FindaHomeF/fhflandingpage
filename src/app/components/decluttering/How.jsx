@@ -97,7 +97,7 @@ const How = () => {
                     </Button>
 
                     <Button className="bg-transparent h-full border border-primary text-primary
-                     hover:bg-darkBlue/5 rounded-full w-3/6">Log In</Button>
+                     hover:bg-darkBlue/5 rounded-full w-3/6">Join Waitlist</Button>
                 </div>
             </div>
         </div>
