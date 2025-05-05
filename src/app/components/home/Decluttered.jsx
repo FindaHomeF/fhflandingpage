@@ -11,7 +11,7 @@ const Decluttered = () => {
         <div className="declutter-inner w-[90%] md:w-5/6 mx-auto">
             <h3 className='text-2xl md:text-[2.5rem] font-bold capitalize leading-[2.62rem] text-center pb-3 md:pb-7'>Decluttered Items</h3>
 
-            <div className="w-full grid-cols-2 grid md:grid-cols-4 gap-x-5">
+            <div className="w-full grid-cols-1 gap-y-5 grid md:grid-cols-4 gap-x-5">
                 {[...Array(4)].map((_, index)=>(
                     <div key={index}>
                         <DeclutteredBox image={Declutter} border={true}/>

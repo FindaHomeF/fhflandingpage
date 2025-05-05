@@ -31,7 +31,7 @@ const ServiceCard = () => {
                     <MapPin 
                     color="#FF9500" 
                     strokeWidth={1.5}
-                    className='max-md:w-4'
+                    className='max-md:w-4 '
                     />
                     <p className="text-black/60 text-[10px] md:text-sm">
                         South Gate
@@ -71,13 +71,13 @@ const ServiceCard = () => {
             </div>
 
             <div className='mt-4 flex-itc flex-col 
-            min-[350px]:flex-row gap-2 md:gap-3'>
-                <div>
+            min-[350px]:flex-row gap-2 md:gap-3 max-w-full overflow-hidden'>
+                <div className='w-4/6'>
                     <ButtonGS
                     content="Book Now"
                     uppercase={false}
                     className={` max-lg:py-2 max-lg:rounded-xl max-lg:h-fit
-                    max-lg:w-fit max-lg:text-xs`}
+                    max-lg:w-fit md:!w-full max-lg:text-xs`}
                     />
                 </div>
 

@@ -12,7 +12,7 @@ input{
   background: url('../../public/cta-banner.jpg');
 }
 .hero-head{
-  @apply text-3xl md:text-7xl font-bold leading-snug;
+  @apply text-3xl md:text-7xl font-bold md:leading-snug;
 }
 .hero-para{
   @apply text-base md:text-2xl font-medium;

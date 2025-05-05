@@ -7,8 +7,8 @@ const Features = () => {
   return (
     <div className="features-outer transition-all ease-linear duration-500" id='feat' >
         <div className="features-inner w-[90%] md:w-5/6 mx-auto">
-            <h3 className='text-xl md:text-[2.5rem] font-bold leading-[2.62rem] text-center pb-2'>What We Do</h3>
-            <p className='text-gray text-lg text-center pb-3 md:pb-7 md:w-5/6 mx-auto'>Find-a-Home FUTA simplifies your search for reliable housing and essential services. Enjoy peace of mind with verified properties and trusted service providers tailored for your student needs.</p>
+            <h3 className='section-head font-bold leading-[2.62rem] text-center pb-2'>What We Do</h3>
+            <p className='text-gray section-para text-center pb-3 md:pb-7 md:w-5/6 mx-auto'>Find-a-Home FUTA simplifies your search for reliable housing and essential services. Enjoy peace of mind with verified properties and trusted service providers tailored for your student needs.</p>
 
             <div className="features-container flex flex-wrap md:flex-nowrap gap-y-5 items-stretch justify-between gap-x-10">
                 <div className="features-box-outer bg-[#F9FAFB] rounded-2xl p-5 md:w-2/6">

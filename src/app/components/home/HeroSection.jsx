@@ -16,12 +16,12 @@ const HeroSection = () => {
                 {/* Experience stress-free living with our apartment options, 
                 designed for students and professionlas. */}
             </p>
-            <div className="hero-btns flex pt-4 md:pt-2 gap-x-3 items-center w-full !justify-center">
+            <div className="hero-btns flex flex-col md:flex-row gap-y-3 pt-4 md:pt-2 gap-x-3 items-center w-full !justify-center">
                 <ButtonGS/>
                 <FindaHome/>
             </div>
             <div className="md:hidden pt-20 flex justify-center items-center w-full">
-                <Link href="#feat"><CiCircleChevDown className="animate-bounce text-5xl text-[#0d27409d]"/></Link>
+                <Link href="#transform"><CiCircleChevDown className="animate-bounce text-5xl text-[#0d27409d]"/></Link>
             </div>
         </div>
 

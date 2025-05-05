@@ -8,7 +8,7 @@ const Testimonials = () => {
   return (
     <div className="testi-outer">
         <div className="testi-inner w-[90%] md:w-5/6 mx-auto mb-10">
-            <h3 className='text-2xl md:text-[2.5rem] font-semibold leading-[2.62rem] text-center pb-7'>Testimonials</h3>
+            <h3 className='sectiom-head font-semibold leading-[2.62rem] text-center pb-7'>Testimonials</h3>
 
             <div className="testi-outer w-full">
                 <div className="testi-inner w-full md:w-3/6 mx-auto flex flex-col justify-center items-center">

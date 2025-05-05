@@ -57,15 +57,15 @@ const Values = () => {
                 <p className="section-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
 
-            <div className="w-full flex justify-between items-center gap-x-14  mt-16">
-                <div className="w-3/6">
+            <div className="w-full flex flex-col md:flex-row justify-between items-center gap-y-10 gap-x-14 mt-10 md:mt-16">
+                <div className="md:w-3/6 order-2 md:order-1">
                     <div className="w-full grid grid-cols-2 gap-5 gap-y-10">
                         {values.map((value, index)=>(
                             <div key={index} className="space-y-3 h-full">
-                                <div className="text-4xl text-primary">{value.icon}</div>
+                                <div className="text-2xl md:text-4xl text-primary">{value.icon}</div>
                                 <div className="">
-                                    <h4 className="text-xl font-medium">{value.head}</h4>
-                                    <p className="text-base font-normal">{value.para}</p>
+                                    <h4 className="text-base md:text-xl font-medium">{value.head}</h4>
+                                    <p className="text-sm md:text-base font-normal">{value.para}</p>
                                 </div>
                                 
                             </div>
@@ -73,8 +73,10 @@ const Values = () => {
 
                     </div>
                 </div>
-                <div className="w-3/6">
-                    <div className="image-container h-[33rem] w-full bg-gray relative">
+
+
+                <div className="md:w-3/6 order-1 md:order-2">
+                    <div className="image-container h-[15rem] md:h-[33rem] w-full bg-gray relative">
                         {/* <Image
                             src={}
                             alt={''}
