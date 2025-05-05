@@ -29,7 +29,7 @@ const ImagesAndDescriptionDisplay = () => {
                 width={300}
                 height={400}
                 alt='declutter-media-representation'
-                className="object-cover w-full h-full group-hover:scale-105 
+                className="object-cover w-full h-[18rem] lg:h-[30rem] group-hover:scale-105 
                 transition-all ease-linear duration-300 rounded-2xl"
               />
             </div>
