@@ -5,6 +5,8 @@ import Footer from '../components/global/Footer'
 import Filter from '../components/global/Filter'
 import AvailableServices from '../components/servicesPage/available-services'
 import TopRatedProfessionals from '../components/servicesPage/top-rated-professionals'
+import Categories from '../components/servicesPage/categories'
+import LatestListings from '../components/servicesPage/latest-listings'
 
 const page = () => {
   return (
@@ -20,6 +22,8 @@ const page = () => {
         <div>
           <AvailableServices/>
           <TopRatedProfessionals/>
+          <Categories/>
+          <LatestListings/>
         </div>
       </div>
     </main>

@@ -20,7 +20,7 @@ export const FindaHome = ({ content = "List Your Property", uppercase = true }) 
 export const SeeAll = ({ whiteBorder = false }) => {
   return (
     <Button className={`
-    ${whiteBorder ? "border-[#fff]/70" : "border-[#0D2740]" }  
+    ${whiteBorder ? "border-[#fff]/70 hover:bg-white/5" : "border-[#0D2740]" }  
     capitalize text-base md:text-lg tracking-wide bg-[#0D2740] 
     font-medium h-12 w-[10rem] rounded-full border 
     flex items-center gap-x-3`}>See All 

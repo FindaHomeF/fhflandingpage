@@ -39,9 +39,19 @@ const How = () => {
                     <h3 className="section-head">How It Works</h3>
                     <p className='section-para mx-auto w-4/6 pb-3'>Find-a-Home FUTA revolutionizes your housing search with verified properties tailored for FUTA students. Our platform ensures a seamless experience, connecting you with trusted service providers and essential resources.</p>
                     
-                    <div className="h-12 w-[30%] mt-3 mx-auto flex  justify-center gap-x-5 text-base font-semibold transition-all ease-in-out duration-300">
-                        <Button className={`h-full text-primary bg-lightGray capitalize rounded-full w-3/6 hover:text-white  ${buyer && 'bg-secondary text-white'}`} onClick={()=>setBuyer(true)}>For Buyers</Button>
-                        <Button className={`h-full text-primary bg-lightGray capitalize rounded-full w-3/6 hover:text-white ${!buyer && 'bg-secondary'}`} onClick={()=>setBuyer(false)}>For Sellers</Button>
+                    <div className="h-12 w-[30%] mt-3 mx-auto flex  
+                    justify-center gap-x-5 text-base font-semibold 
+                    transition-all ease-in-out duration-300">
+                        <Button className={`h-full text-primary bg-lightGray 
+                        capitalize rounded-full w-3/6 hover:text-white 
+                        transition-all ease-in-out duration-300 cursor-pointer
+                        ${buyer && 'bg-secondary text-white'}`} onClick={()=>setBuyer(true)}>
+                            For Buyers</Button>
+                        <Button className={`h-full text-primary bg-lightGray 
+                        capitalize rounded-full w-3/6 hover:bg-lightGray 
+                        transition-all ease-in-out duration-300 cursor-pointer
+                        ${!buyer && 'bg-secondary'}`} onClick={()=>setBuyer(false)}>
+                            For Sellers</Button>
                     </div>
                 </div>
 
@@ -79,8 +89,15 @@ const How = () => {
                 </div>
 
                 <div className="h-12 w-2/6 mx-auto flex justify-center gap-x-5 text-base font-semibold">
-                    <Button className="bg-primary h-full text-white hover:bg-secondary rounded-full w-3/6 flex items-center gap-x-2">Learn More <span className="bg-white h-5 w-5 rounded-full flex justify-center items-center"><GoArrowUpRight className="text-xs text-primary" /></span></Button>
-                    <Button className="bg-transparent h-full border border-primary text-primary hover:bg-primary hover:text-white rounded-full w-3/6">Log In</Button>
+                    <Button className="bg-primary h-full text-white hover:bg-secondary 
+                    rounded-full w-3/6 flex items-center gap-x-2">Learn More 
+                        <span className="bg-white h-5 w-5 rounded-full 
+                        flex justify-center items-center">
+                        <GoArrowUpRight className="text-xs text-primary" /></span>
+                    </Button>
+
+                    <Button className="bg-transparent h-full border border-primary text-primary
+                     hover:bg-primary hover:text-white rounded-full w-3/6">Log In</Button>
                 </div>
             </div>
         </div>
