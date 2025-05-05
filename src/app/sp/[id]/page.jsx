@@ -4,6 +4,7 @@ import FooterCta from '@/app/components/global/FooterCta'
 import Header from '@/app/components/global/Header'
 import React from 'react'
 import ImagesAndDescriptionDisplay from '../components/images-and-desc'
+import Details from '../components/details'
 
 const Page = () => {
   return (
@@ -18,6 +19,7 @@ const Page = () => {
 
             <div>
             <ImagesAndDescriptionDisplay/>
+            <Details/>
             <FooterCta/>
             </div>
         </div>
