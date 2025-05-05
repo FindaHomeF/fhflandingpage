@@ -252,7 +252,7 @@ const Filter = ({ placeholder }) => {
                   <Drawer>
                     <DrawerTrigger asChild>
                       <Button variant="outline" className="gap-2 bg-transparent
-                      w-full lg:w-[100px] border-[#CED4DA]">
+                      w-full lg:w-[100px] border-[#CED4DA] text-[#212529] hover:bg-darkBlue/5">
                         <CiFilter className='text-base'/>
                         Filter
                       </Button>
@@ -269,13 +269,18 @@ const Filter = ({ placeholder }) => {
                 )}
 
                 <Select>
-                    <SelectTrigger className="w-full lg:w-[100px] border-[#CED4DA]">
-                        <SelectValue placeholder="Sort" />
+                    <SelectTrigger 
+                    className="w-full lg:w-[100px] 
+                    border-[#CED4DA] text-[#212529] hover:bg-darkBlue/5
+                    data-[placeholder]:text-[#212529]">
+                        <SelectValue 
+                        className='data-[placeholder]:text-[#212529]' 
+                        placeholder="Sort" />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="light">Lowest First</SelectItem>
-                        <SelectItem value="dark">Highest First</SelectItem>
-                        <SelectItem value="system">Popularity</SelectItem>
+                        <SelectItem value="lowest">Lowest First</SelectItem>
+                        <SelectItem value="highest">Highest First</SelectItem>
+                        <SelectItem value="popularity">Popularity</SelectItem>
                     </SelectContent>
                 </Select>
               </div>
