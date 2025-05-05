@@ -2,7 +2,9 @@ import { Star } from 'lucide-react'
 import { Clock12 } from 'lucide-react'
 import { MapPin } from 'lucide-react'
 import React from 'react'
-// import { ButtonGS } from '../components/global/Buttons/ButtonGS'
+import { ButtonGS } from '../global/Buttons/ButtonGS'
+import { IoBookmarksOutline } from 'react-icons/io5'
+import { LiaShareAltSolid } from "react-icons/lia";
 
 const ServiceCard = () => {
   return (
@@ -10,7 +12,7 @@ const ServiceCard = () => {
     border border-black/20 rounded-xl'>
         <div className='relative w-24 h-24 md:w-32 md:h-32 mx-auto
         bg-[#D9D9D9] rounded-full'>
-            <div className='absolute bottom-3 right-3 
+            <div className='absolute bottom-[0.4rem] right-4 
             w-3 h-3 md:w-4 md:h-4 rounded-full bg-darkBlue'/>
         </div>
 
@@ -67,13 +69,17 @@ const ServiceCard = () => {
                 </p>
             </div>
 
-            <div className='flex-col md:flex-row items-center gap-3'>
-                {/* <ButtonGS
-                content="Book Now"
-                /> */}
+            <div className='mt-3 flex-col md:flex-row items-center gap-3'>
+                <div className=''>
+                    <ButtonGS
+                    content="Book Now"
+                    uppercase={false}
+                    />
+                </div>
 
                 <div className='flex-itc gap-3'>
-                    
+                    <IoBookmarksOutline />
+                    <LiaShareAltSolid />
                 </div>
             </div>
         </div>

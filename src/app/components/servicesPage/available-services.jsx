@@ -10,7 +10,8 @@ const AvailableServices = () => {
                 Available Services</h3>
         </div>
 
-        <div className='mt-6 w-full grid grid-cols-2 md:grid-cols-4
+        <div className='mt-6 md:mt-10 lg:mt-14
+        w-full grid grid-cols-2 md:grid-cols-4
         gap-5'>
             {[...Array(4)].map((_, index) => (
             <ServiceCard key={index} />

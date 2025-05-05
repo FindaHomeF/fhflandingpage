@@ -2,18 +2,18 @@ import { Button } from "@/components/ui/button"
 import { GoArrowUpRight } from "react-icons/go";
 
 
-export const ButtonGS = ({content="Start Your Search"}) => {
+export const ButtonGS = ({ content="Start Your Search", uppercase = true }) => {
   return (
-    <Button className="uppercase bg-[#0D2740] 
-    rounded-full  h-12 w-[12rem]">{ content }</Button>
+    <Button className={` ${uppercase && "uppercase"} bg-[#0D2740] 
+    rounded-full  h-12 w-[12rem] `}>{ content }</Button>
   )
 }
 
-export const FindaHome = ({ content = "List Your Property"}) => {
+export const FindaHome = ({ content = "List Your Property", uppercase = true }) => {
   return (
-    <Button className="uppercase bg-transparent rounded-full h-12 
+    <Button className={` ${uppercase && "uppercase"} bg-transparent rounded-full h-12 
     w-[12rem] border border-[#0D2740] text-[#0D2740] 
-    hover:bg-black/0 lg:hover-bg-[#0D2740]/20">{ content }</Button>
+    hover:bg-black/0 lg:hover-bg-[#0D2740]/20 `}>{ content }</Button>
   )
 }
 
