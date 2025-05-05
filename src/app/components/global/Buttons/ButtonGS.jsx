@@ -2,10 +2,16 @@ import { Button } from "@/components/ui/button"
 import { GoArrowUpRight } from "react-icons/go";
 
 
-export const ButtonGS = ({ content="Start Your Search", uppercase = true }) => {
+export const ButtonGS = ({ 
+  content="Start Your Search", 
+  uppercase = true,
+  className='',
+ }) => {
   return (
-    <Button className={` ${uppercase && "uppercase"} bg-[#0D2740] 
-    rounded-full h-12 w-[12rem] `}>{ content }</Button>
+    <Button className={` 
+    ${className}  
+    ${uppercase && "uppercase"} bg-[#0D2740] 
+    rounded-full h-12 lg:w-[12rem] `}>{ content }</Button>
   )
 }
 

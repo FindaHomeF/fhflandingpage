@@ -70,10 +70,11 @@ const ServiceCard = () => {
             </div>
 
             <div className='mt-4 flex flex-col md:flex-row items-center gap-3'>
-                <div className=''>
+                <div className='max-lg:w-full'>
                     <ButtonGS
                     content="Book Now"
                     uppercase={false}
+                    className={`max-lg:w-full`}
                     />
                 </div>
 
