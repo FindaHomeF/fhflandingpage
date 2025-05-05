@@ -15,7 +15,7 @@ const page = () => {
         <main className="space-y-16 md:space-y-20 pt-3 md:pt-16">
             <Hero
                 placeholder={'What items are you looking for?'}
-                mainText={'FHF’s Marketplace'}
+                mainText={'FHF\'s Marketplace'}
                 subText={'Buy and sell quality used items within the FUTA community'}
                 btn1={'list an item'}
                 btn2={'browse categories'}

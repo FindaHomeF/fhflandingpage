@@ -7,6 +7,9 @@ import AvailableServices from '../components/servicesPage/available-services'
 import TopRatedProfessionals from '../components/servicesPage/top-rated-professionals'
 import Categories from '../components/servicesPage/categories'
 import LatestListings from '../components/servicesPage/latest-listings'
+import How from '../components/decluttering/How'
+import Testimonials from '../components/home/Testimonials'
+import FooterCta from '../components/global/FooterCta'
 
 const page = () => {
   return (
@@ -24,6 +27,9 @@ const page = () => {
           <TopRatedProfessionals/>
           <Categories/>
           <LatestListings/>
+          <How/>
+          <Testimonials />
+          <FooterCta/>
         </div>
       </div>
     </main>

@@ -6,24 +6,34 @@ const Categories = () => {
   return (
     <div>
         <div className='mt-12 w-[90%] mx-auto'>
-            <div>
-                <h3 className='font-semibold text-center mt-12 md:mt-16 
-                text-2xl md:text-4xl lg:text-[40px]'>
-                Categories</h3>
-            </div>
+          <div>
+            <h3 className='font-semibold text-center mt-12 md:mt-16 
+            text-2xl md:text-4xl lg:text-[40px]'>
+            Categories
+            </h3>
 
-            <div className='mt-6 md:mt-10 lg:mt-14
-            w-full grid grid-cols-2 md:grid-cols-4
-            gap-5'>
+            <div className="flex justify-center items-center gap-x-3">
+              <Button className="cat-btn text-white !bg-secondary">Furniture</Button>
+              <Button className="cat-btn">Electronics</Button>
+              <Button className="cat-btn">Books & Study Materials</Button>
+              <Button className="cat-btn">Home Appliances</Button>
+              <Button className="cat-btn">Kitchen Items</Button>
+              <Button className="cat-btn">Room Decor</Button>
+              <Button className="cat-btn">Others</Button>
+            </div>
+          </div>
+
+          <div className='mt-6 md:mt-10 lg:mt-14
+          w-full grid grid-cols-2 md:grid-cols-4
+          gap-5'>
             {[...Array(4)].map((_, index) => (
             <ServiceCard key={index} />
             ))}
-            </div>
+          </div>
 
-            <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
-                <SeeAll/>
-            </div>
-
+          <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
+            <SeeAll/>
+          </div>
         </div>
     </div>
   )
