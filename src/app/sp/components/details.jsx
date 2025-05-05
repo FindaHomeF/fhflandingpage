@@ -52,7 +52,7 @@ const Details = () => {
                 Agent Profile
             </h3>
 
-            <div className='w-full py-5 md:py-10 px-3 md:px-5l'>
+            <div className='w-full py-5 md:py-10 px-3 md:px-5'>
                     <div className='relative w-20 h-20 md:w-32 md:h-32
                     bg-[#D9D9D9] rounded-full'>
                         <div className='absolute bottom-0 md:bottom-[0.4rem] right-4 
