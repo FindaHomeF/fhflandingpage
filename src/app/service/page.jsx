@@ -4,6 +4,7 @@ import HeroSection from '../components/service/HeroSection'
 import Footer from '../components/global/Footer'
 import Filter from '../components/global/Filter'
 import AvailableServices from '../components/servicesPage/available-services'
+import TopRatedProfessionals from '../components/servicesPage/top-rated-professionals'
 
 const page = () => {
   return (
@@ -17,7 +18,8 @@ const page = () => {
         </div>  
 
         <div>
-        <AvailableServices/>
+          <AvailableServices/>
+          <TopRatedProfessionals/>
         </div>
       </div>
     </main>
