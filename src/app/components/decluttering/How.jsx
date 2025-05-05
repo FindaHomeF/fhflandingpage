@@ -48,7 +48,7 @@ const How = () => {
                         ${buyer && 'bg-secondary text-white'}`} onClick={()=>setBuyer(true)}>
                             For Buyers</Button>
                         <Button className={`h-full text-primary bg-lightGray 
-                        capitalize rounded-full w-3/6 hover:bg-lightGray 
+                        capitalize rounded-full w-3/6 hover:bg-darkBlue/10 
                         transition-all ease-in-out duration-300 cursor-pointer
                         ${!buyer && 'bg-secondary'}`} onClick={()=>setBuyer(false)}>
                             For Sellers</Button>
@@ -97,7 +97,7 @@ const How = () => {
                     </Button>
 
                     <Button className="bg-transparent h-full border border-primary text-primary
-                     hover:bg-primary hover:text-white rounded-full w-3/6">Log In</Button>
+                     hover:bg-darkBlue/10 hover:text-white rounded-full w-3/6">Log In</Button>
                 </div>
             </div>
         </div>
