@@ -25,7 +25,7 @@ const ImagesAndDescriptionDisplay = () => {
             {/* Main Image */}
             <div className='w-full lg:basis-[55%] h-[18rem] lg:h-[30rem] rounded-2xl'>
               <Image
-                src={`/declutter1.png`} // Use active image
+                src={imagePaths[activeImage]}
                 width={300}
                 height={400}
                 alt='declutter-media-representation'
@@ -37,7 +37,7 @@ const ImagesAndDescriptionDisplay = () => {
             {/* Thumbnail Gallery */}
             <div className='max-lg:pl-2 h-[30rem] no-scrollbar max-lg:flex 
             max-lg:overflow-x-auto lg:grid grid-cols-1 lg:grid-cols-2 gap-3'>
-              {[...Array(4)].map((_, index) => (
+              {imagePaths.map((path, index) => (
                 <div 
                   key={index}
                   onClick={() => setActiveImage(index)}
@@ -50,10 +50,10 @@ const ImagesAndDescriptionDisplay = () => {
                   } rounded-2xl`}
                 >
                   <Image
-                    src={imagePaths[activeImage]}
-                    width={800}
-                    height={600}
-                    alt={`property-image-${activeImage + 1}`}
+                    src={path}
+                    width={300}
+                    height={200}
+                    alt={`property-thumbnail-${index + 1}`}
                     className="w-[8rem] h-[8rem] md:w-[14.5rem] md:h-[14.5rem] 
                     object-cover group-hover:scale-105 transition-all ease-linear duration-300 rounded-xl"
                   />
