@@ -60,6 +60,13 @@ export default {
         alignItems: 'center',
         justifyContent: 'center',
         },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
       });
       },
       require("tailwindcss-animate")
