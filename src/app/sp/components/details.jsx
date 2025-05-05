@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaBath, FaRegLightbulb } from 'react-icons/fa'
+import { BsHouse, BsHouseAddFill } from 'react-icons/bs'
+import { FaBath, FaRegLightbulb, FaStar, FaWalking } from 'react-icons/fa'
 import { MdBed } from 'react-icons/md'
 
 const Details = () => {
@@ -28,6 +29,17 @@ const Details = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="mt-5 space-y-5 text-lightSec text-sm">
+                <h6 className="flex gap-x-1 items-center "><BsHouse className="text-secondary text-xs"/> Single Room</h6>
+                <h6 className="flex gap-x-1 items-center ">< BsHouseAddFill className="text-secondary text-xs"/>Posted 3hrs ago</h6>
+                <h6 className="flex gap-x-1 items-center "><FaWalking className="text-secondary"/> 3 minutes to the gate</h6>
+                <div className="flex items-center gap-x-2">
+                    <h6>Posted on August 14, 2023 </h6>
+                </div>
+                
+            </div>
+
         </div>
     </div>
   )

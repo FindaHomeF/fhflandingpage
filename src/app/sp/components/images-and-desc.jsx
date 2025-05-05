@@ -12,7 +12,7 @@ const ImagesAndDescriptionDisplay = () => {
         
         {/* IMADE DISPLAY */}
         <div className='w-full lg:max-w-[80vw] mx-auto'>
-            <div className='mt-8 w-full h-[30rem] flex flex-col lg:flex-row gap-5'>
+            <div className='lg:mt-8 w-full h-[30rem] flex flex-col lg:flex-row gap-5'>
                 <div className='w-full lg:basis-[55%] h-[18rem] lg:h-[30rem] rounded-2xl'>
                     <Image
                     src={`/declutter1.png`}

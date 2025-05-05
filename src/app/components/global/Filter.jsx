@@ -15,7 +15,7 @@ const Filter = ({placeholder}) => {
 
   return (
     <div className='w-full'>
-        <div className="mx-auto lg:w-5/6 mt-16">
+        <div className="mx-auto lg:w-5/6 mt-8 lg:mt-16">
             <form action='#'>
                 <div>
                     <div className='flex max-lg:flex-col max-lg:gap-2 w-full items-center gap-x-3 lg:h-10'>

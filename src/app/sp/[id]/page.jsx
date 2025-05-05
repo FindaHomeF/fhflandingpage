@@ -13,7 +13,7 @@ const Page = () => {
         <main className="space-y-16 md:space-y-16">
         <div className="space-y-10">
             <Header/>
-            <div className='w-[90%] mx-auto md:w-4/6'>
+            <div className='w-[90%] mx-auto md:w-4/6 '>
                 <Filter placeholder={'What apartment are you looking for?'}/>
             </div>  
 
