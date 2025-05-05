@@ -30,7 +30,9 @@ const page = () => {
           <div className='py-10 mt-20'>
             <How/>
           </div>
-          <Testimonials />
+          <div className='mt-10'>
+            <Testimonials />
+          </div>
           <FooterCta/>
         </div>
       </div>
