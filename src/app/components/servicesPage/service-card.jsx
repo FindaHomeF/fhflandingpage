@@ -10,9 +10,9 @@ const ServiceCard = () => {
   return (
     <div className='w-full bg-[#F9FAFB] py-5 md:py-10 px-3 md:px-5
     border border-black/20 rounded-xl'>
-        <div className='relative w-24 h-24 md:w-32 md:h-32 mx-auto
+        <div className='relative w-20 h-20 md:w-32 md:h-32 mx-auto
         bg-[#D9D9D9] rounded-full'>
-            <div className='absolute bottom-[0.4rem] right-4 
+            <div className='absolute bottom-0 md:bottom-[0.4rem] right-4 
             w-3 h-3 md:w-4 md:h-4 rounded-full bg-darkBlue'/>
         </div>
 
@@ -33,7 +33,7 @@ const ServiceCard = () => {
                     strokeWidth={1.5}
                     className='max-md:w-4'
                     />
-                    <p className="text-black/60 text-xs md:text-sm">
+                    <p className="text-black/60 text-[10px] md:text-sm">
                         South Gate
                     </p>
                 </div>
@@ -45,8 +45,8 @@ const ServiceCard = () => {
                     strokeWidth={1.5}
                     className='max-md:w-4'
                     />
-                    <p className="text-black/60 text-xs md:text-sm">
-                        4.7 (120 Reviews)
+                    <p className="text-black/60 text-[10px] md:text-sm">
+                        4.7 <span className='max-md:hidden'>(120 Reviews)</span>
                     </p>
                 </div>
             </div>
@@ -58,32 +58,35 @@ const ServiceCard = () => {
                 strokeWidth={1.5}
                 className='max-md:w-4'
                 />
-                <p className="text-black/60 text-xs md:text-sm max-md:font-medium">
+                <p className="text-black/60 text-[10px] md:text-sm max-md:font-medium">
                     Responses within 2 hours
                 </p>
             </div>
 
-            <div className='mt-5'>
-                <p className='text-center font-medium md:text-lg'>
+            <div className='mt-2 md:mt-5'>
+                <p className='text-center font-medium
+                 text-sm md:text-lg'>
                     Starting at NGN 10,000
                 </p>
             </div>
 
-            <div className='mt-4 flex flex-col md:flex-row items-center gap-3'>
-                <div className='max-lg:w-full'>
+            <div className='mt-4 flex-itc flex-col 
+            min-[350px]:flex-row gap-2 md:gap-3'>
+                <div>
                     <ButtonGS
                     content="Book Now"
                     uppercase={false}
-                    className={`max-lg:w-full`}
+                    className={` max-lg:py-2 max-lg:rounded-xl max-lg:h-fit
+                    max-lg:w-fit max-lg:text-xs`}
                     />
                 </div>
 
-                <div className='w-fit flex-itc gap-3'>
+                <div className='w-fit flex-itc gap-1.5 md:gap-3'>
                     <IoBookmarksOutline size={22} 
-                        className='cursor-pointer' 
+                        className='max-lg:w-4 cursor-pointer' 
                     />
                     <LiaShareAltSolid size={27}
-                        className='cursor-pointer' 
+                        className='max-lg:w-5 cursor-pointer' 
                     />
                 </div>
             </div>

@@ -37,9 +37,14 @@ const How = () => {
             <div className="">
                 <div className='text-center space-y-3'>
                     <h3 className="section-head">How It Works</h3>
-                    <p className='section-para mx-auto w-4/6 pb-3'>Find-a-Home FUTA revolutionizes your housing search with verified properties tailored for FUTA students. Our platform ensures a seamless experience, connecting you with trusted service providers and essential resources.</p>
+                    <p className='section-para mx-auto lg:w-4/6 pb-3'>
+                    Find-a-Home FUTA revolutionizes your housing 
+                    search with verified properties tailored for FUTA 
+                    students. Our platform ensures a seamless experience, 
+                    connecting you with trusted service providers and 
+                    essential resources.</p>
                     
-                    <div className="h-12 w-[30%] mt-3 mx-auto flex  
+                    <div className="h-12 lg:w-[30%] mt-3 mx-auto flex  
                     justify-center gap-x-5 text-base font-semibold 
                     transition-all ease-in-out duration-300">
                         <Button className={`h-full text-primary bg-lightGray 
@@ -58,7 +63,8 @@ const How = () => {
                 
                 <div className='w-full my-14'>
                     {buyer?
-                        <div className="grid grid-cols-3 gap-x-10 transition-all ease-in-out duration-300">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 max-lg:gap-7 gap-x-10 
+                        transition-all ease-in-out duration-300">
 
                             {buyersHow.map((how, index)=>(
                                 <div className="space-y-3 flex flex-col justify-start items-center text-black text-center" key={index}>
@@ -88,7 +94,8 @@ const How = () => {
                     }
                 </div>
 
-                <div className="h-12 w-2/6 mx-auto flex justify-center gap-x-5 text-base font-semibold">
+                <div className="h-12 lg:w-2/6 mx-auto flex justify-center 
+                gap-x-5 text-base font-semibold">
                     <Button className="bg-primary h-full text-white hover:bg-secondary 
                     rounded-full w-3/6 flex items-center gap-x-2">Learn More 
                         <span className="bg-white h-5 w-5 rounded-full 

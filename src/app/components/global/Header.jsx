@@ -17,7 +17,8 @@ const Header = () => {
 
   return (
     <div className="header-outer w-[90%] mx-auto font-medium -mb-10 md:mb-0 relative">
-      <div className="header-inner w-full flex justify-between items-center md:my-5 my-4#0D2740">
+      <div className="header-inner w-full flex justify-between 
+      items-center md:my-5 my-4#0D2740 max-lg:-mt-6">
         <Link href={'/'} className='w-1/6 hidden md:block'>
           <motion.div className="logo-container w-full " layoutId='logo-animate'>
             <Image src={Logo}
@@ -29,12 +30,12 @@ const Header = () => {
         </Link>
 
         <Link href={'/'}>
-          <div className="w-2/6 overflow-hidden relative -left-5 md:hidden">
+          <div className="overflow-hidden relative -left-5 md:hidden">
             <Image src={LogoM}
             alt="fhflogo"
             width={200}
             height={54}
-            className="object-cover"
+            className="w-32 object-cover h-auto"
             />
           </div>
         </Link>
@@ -42,7 +43,7 @@ const Header = () => {
         <div className="menu-outer w-auto hidden md:block">
           <ul className="menu-inner h-10 px-5  uppercase gap-x-7 text-sm font-medium tracking-wide cursor-pointer flex w-full items-center">
             <Link href='/about'><li>About Us</li></Link>
-            <li className=" relative group h-full transition-all ease-linear duration-300">
+            <li className=" z-10 relative group h-full transition-all ease-linear duration-300">
               <div className="flex items-center gap-x-2 relative min-h-full">Products <FaAngleDown /></div> 
               <ul className="absolute transition-all ease-linear duration-300 text-white bg-tetiary space-y-2 border-t-2 border-t-secondary w-fit px-3 py-2 text-nowrap group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none">
                 <Link 

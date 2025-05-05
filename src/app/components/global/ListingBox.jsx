@@ -9,17 +9,22 @@ import { BsHouseAddFill } from "react-icons/bs";
 import { BsHouse } from "react-icons/bs";
 import { FaWalking } from "react-icons/fa";
 import { FaRegLightbulb } from "react-icons/fa6";
+import Link from "next/link";
 
 const ListingBox = ({image}) => {
   return (
     <div className="listings-box shadow shadow-[#00000010] rounded-xl bg-white overflow-hidden border border-[#00000033] group">
         <div className="listing-image h-[13.75rem] relative overflow-hidden ">
-            <Image
-                src={image}
-                alt="apartment main media"
-                width={300}
-                className="object-fit h-full w-full rounded-lg relative group-hover:scale-105 transition-all ease-linear duration-300"
-            />
+            <Link
+            href={`/sp/1`}
+            >
+                <Image
+                    src={image}
+                    alt="apartment main media"
+                    width={300}
+                    className="object-fit h-full w-full rounded-lg relative group-hover:scale-105 transition-all ease-linear duration-300"
+                />
+            </Link>
             <Button className="h-8 w-8 p-1 flex justify-center items-center absolute top-2 text-xl text-white right-2 rounded-full bg-primary">
                 <CiHeart />
             </Button>
@@ -29,7 +34,14 @@ const ListingBox = ({image}) => {
         <div className="listing-info p-3">
             <div className="info-top w-full">
                 <div className="w-5/6 mx-auto text-center">
-                    <h5 className="text-black uppercase line-clamp-2 text-base md:text-lg font-bold truncate">Marble Lodge</h5>
+                <Link
+                href={`/sp/1`}
+                >
+                    <h5 className="text-black uppercase line-clamp-2 text-base md:text-lg font-bold truncate">
+                    Marble Lodge
+                    </h5>
+                </Link>
+                   
                     <div className="flex w-full gap-x-1">
                         <HiOutlineMapPin className="text-base min-w-1/6"/>
                         <p className="text-xs text-tetiary truncate">8, Deeper Life, NorthGate, Akure</p>

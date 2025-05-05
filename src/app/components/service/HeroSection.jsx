@@ -3,7 +3,7 @@ import { abhayaLibre} from '../../layout'
 import { CiCircleChevDown } from "react-icons/ci";
 import Link from "next/link"
 
-const HeroSection = () => {
+const HeroSection = ({ showScrollDownButton = true }) => {
   return (
     <div className="hero-outer w-full space-y-10 md:bg-transparent md:h-fit flex md:block justify-center items-center">
         <div className="hero-inner w-[90%] md:w-4/6 mx-auto text-center space-y-2 md:space-y-3 pt-3 md:pt-12 md:bg-none">
@@ -22,9 +22,15 @@ const HeroSection = () => {
                 content="BROWSE CATEGORIES"
                 />
             </div>
-            <div className="md:hidden pt-20 flex justify-center items-center w-full">
-                <Link href="#feat"><CiCircleChevDown className="animate-bounce text-5xl text-[#0d27409d]"/></Link>
-            </div>
+            {showScrollDownButton &&
+                <div className="md:hidden pt-20 flex justify-center items-center w-full">
+                    <Link href="#feat">
+                        <CiCircleChevDown 
+                        className="animate-bounce text-5xl text-[#0d27409d]"
+                        />
+                    </Link>
+                </div>
+            }
         </div>
     </div>
   )

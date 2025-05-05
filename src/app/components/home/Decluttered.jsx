@@ -19,7 +19,8 @@ const Decluttered = () => {
                 ))}
             </div>
 
-            <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
+            <div className="mx-auto w-full flex 
+            justify-center items-center mt-5 md:mt-12">
                 <SeeAll/>
             </div>
         </div>

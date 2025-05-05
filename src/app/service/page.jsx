@@ -13,11 +13,14 @@ import FooterCta from '../components/global/FooterCta'
 
 const page = () => {
   return (
-    <div className="bg-white w-full overflow-x-hidden scroll-smooth transition-all ease-linear duration-500">
+    <div className="bg-white w-full overflow-x-hidden 
+    scroll-smooth transition-all ease-linear duration-500">
     <main className="space-y-16 md:space-y-16">
       <div className="space-y-10">
         <Header/>
-        <HeroSection/>
+        <HeroSection
+        showScrollDownButton={false}
+        />
         <div className='w-[90%] mx-auto md:w-4/6'>
           <Filter  placeholder={'What apartment are you looking for?'}/>
         </div>  
@@ -27,10 +30,10 @@ const page = () => {
           <TopRatedProfessionals/>
           <Categories/>
           <LatestListings/>
-          <div className='py-10 mt-20'>
+          <div className='py-10 mt-8 lg:mt-20'>
             <How/>
           </div>
-          <div className='mt-10'>
+          <div className='lg:mt-10'>
             <Testimonials />
           </div>
           <FooterCta/>

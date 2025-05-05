@@ -13,7 +13,7 @@ const Categories = () => {
             Categories
             </h3>
 
-            <div className="mt-8 flex flex-wrap justify-center items-center gap-x-3">
+            <div className="mt-8 flex flex-wrap justify-center items-center gap-3">
               <Button className="cat-btn text-white !bg-secondary">Furniture</Button>
               <Button className="cat-btn">Electronics</Button>
               <Button className="cat-btn">Books & Study Materials</Button>
