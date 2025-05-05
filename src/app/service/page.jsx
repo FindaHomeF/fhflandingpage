@@ -27,7 +27,9 @@ const page = () => {
           <TopRatedProfessionals/>
           <Categories/>
           <LatestListings/>
-          <How/>
+          <div className='py-10 mt-20'>
+            <How/>
+          </div>
           <Testimonials />
           <FooterCta/>
         </div>
