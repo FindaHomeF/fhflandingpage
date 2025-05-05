@@ -5,6 +5,7 @@ import Header from '@/app/components/global/Header'
 import React from 'react'
 import ImagesAndDescriptionDisplay from '../components/images-and-desc'
 import Details from '../components/details'
+import Listings from '@/app/components/home/Listings'
 
 const Page = () => {
   return (
@@ -20,6 +21,11 @@ const Page = () => {
             <div>
             <ImagesAndDescriptionDisplay/>
             <Details/>
+            <div className='py-8 md:py-10'>
+                <Listings
+                title='Similar Listings'
+                />
+            </div>
             <FooterCta/>
             </div>
         </div>

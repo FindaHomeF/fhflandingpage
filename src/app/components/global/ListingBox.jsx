@@ -88,7 +88,12 @@ const ListingBox = ({image}) => {
 
             <div className="flex justify-between w-full gap-x-3 text-sm font-medium my-5">
                 <Button className="w-3/6 rounded-full text-white bg-primary">Quick Contact</Button>
-                <Button className="w-3/6 rounded-full text-primary border border-[#CED4DA] bg-transparent flex items-center gap-x-2 justify-center"><CiShare2 className="font-bold"/>Share</Button>
+                <Button className="w-3/6 rounded-full text-primary border border-[#CED4DA] 
+                    bg-transparent flex items-center gap-x-2 justify-center 
+                    hover:bg-transparent lg:hover:bg-darkBlue/5">
+                    <CiShare2 className="font-bold"/>
+                    Share
+                </Button>
             </div>
         </div>
     </div>
