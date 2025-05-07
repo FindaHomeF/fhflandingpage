@@ -7,7 +7,7 @@ import { FaLinkedin, FaWhatsappSquare,FaInstagramSquare,FaFacebookSquare, FaTwit
 const Footer = () => {
   return (
     <div className="footer-outer md:pt-14 pt-10 mb-7 md:pb-10 ">
-        <div className="footer-inner w-5/6 mx-auto block md:flex items-start justify-between">
+        <div className="footer-inner w-[90%] md:w-5/6 mx-auto block md:flex items-start justify-between">
             <div className="footer-left w-full md:w-[45%] space-y-5">
                 <div className="logo-container w-fit md:mx-0 relative -left-8 md:-top-2">
                     <Image src={Logo}

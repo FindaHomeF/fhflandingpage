@@ -14,12 +14,14 @@ const Listings = ({ title = "Property listings" }) => {
                 { title }
             </h3>
 
-            <div className="listings-container grid grid-cols-1 md:grid-cols-4 gap-y-5 items-center justify-between gap-x-5">
-                {[List1, List2, List3, List4].map((e,index)=>(
-                    <div key={index}>
-                        <ListingBox image={e}/>
-                    </div> 
-                ))}
+            <div className="overflow-x-auto">
+                <div className="w-full flex flex-nowrap md:grid-cols-4 gap-3 md:gap-x-5">
+                    {[List1, List2, List3, List4].map((list, index)=>(
+                        <div key={index}>
+                            <ListingBox image={list}/>
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">

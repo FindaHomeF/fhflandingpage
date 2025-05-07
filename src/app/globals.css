@@ -12,7 +12,7 @@ input{
   background: url('../../public/cta-banner.jpg');
 }
 .hero-head{
-  @apply text-3xl md:text-7xl font-bold md:leading-snug;
+  @apply text-3xl md:text-7xl font-bold md:leading-[1.25];
 }
 .hero-para{
   @apply text-base md:text-2xl font-medium;
@@ -24,10 +24,10 @@ input{
   @apply text-base md:text-lg font-medium;
 }
 .hero-btn{
-  @apply w-3/6 uppercase font-medium h-full rounded-full transition-all ease-linear duration-300;
+  @apply w-3/6 uppercase font-medium text-xs md:text-base h-full rounded-full transition-all ease-linear duration-300;
 }
 .cat-btn{
-  @apply w-fit h-10 bg-lightGray text-[#212529] text-sm font-semibold rounded-full hover:text-white transition-all ease-in duration-300;
+  @apply w-fit h-8 md:h-10 bg-lightGray text-[#212529] text-sm font-semibold rounded-full hover:text-white transition-all ease-in duration-300;
 }
 
 
