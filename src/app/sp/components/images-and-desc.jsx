@@ -149,7 +149,7 @@ const ImagesAndDescriptionDisplay = () => {
         <div>
             <ButtonGS 
             uppercase={false}
-            content='Add to Cart'
+            content='Add to cart/comapre/ contact agent'
             className='mt-5 lg:!w-fit lg:px-32 lg:mt-10
             max-lg:w-full max-lg:rounded-2xl
             font-bold'

@@ -8,7 +8,7 @@ import { LiaShareAltSolid } from "react-icons/lia";
 
 const ServiceCard = () => {
   return (
-    <div className='w-full bg-[#F9FAFB] py-5 md:py-10 px-3 md:px-5
+    <div className='w-full bg-[#F9FAFB] py-5 md:py-10 px-3 md:px-4
     border border-black/20 rounded-xl'>
         <div className='relative w-20 h-20 md:w-32 md:h-32 mx-auto
         bg-[#D9D9D9] rounded-full'>
@@ -25,15 +25,16 @@ const ServiceCard = () => {
                 Carpenter
             </h3>
 
-            <div className='mt-3 w-full flex-itc-jub flex-wrap gap-2 md:gap-3'>
+            <div className='mt-3 w-full flex-itc-jub flex-nowrap gap-3'>
                 <div className="flex-itc gap-1 md:gap-2">
                     {/* icon */}
                     <MapPin 
                     color="#FF9500" 
                     strokeWidth={1.5}
                     className='max-md:w-4 '
+                    size={15}
                     />
-                    <p className="text-black/60 text-[10px] md:text-sm">
+                    <p className="text-black/60 text-nowrap  text-[10px] md:text-sm">
                         South Gate
                     </p>
                 </div>
@@ -44,9 +45,10 @@ const ServiceCard = () => {
                     color="#FF9500" 
                     strokeWidth={1.5}
                     className='max-md:w-4'
+                    size={15}
                     />
-                    <p className="text-black/60 text-[10px] md:text-sm">
-                        4.7 <span className='max-md:hidden'>(120 Reviews)</span>
+                    <p className="text-black/60 text-nowrap text-[10px] md:text-sm">
+                        4.7 <span className=''>(120 Reviews)</span>
                     </p>
                 </div>
             </div>
@@ -56,6 +58,7 @@ const ServiceCard = () => {
                 <Clock12 
                 color="#FF9500" 
                 strokeWidth={1.5}
+                size={15}
                 className='max-md:w-4'
                 />
                 <p className="text-black/60 text-[10px] md:text-sm max-md:font-medium">
@@ -63,21 +66,21 @@ const ServiceCard = () => {
                 </p>
             </div>
 
-            <div className='mt-2 md:mt-5'>
+            <div className='mt-2 md:mt-3'>
                 <p className='text-center font-medium
-                 text-sm md:text-lg'>
+                 text-sm md:text-base text-primary text-nowrap'>
                     Starting at NGN 10,000
                 </p>
             </div>
 
             <div className='mt-4 flex-itc flex-col 
             min-[350px]:flex-row gap-2 md:gap-3 max-w-full overflow-hidden'>
-                <div className='w-4/6'>
+                <div className='w-5/6 md:w-4/6'>
                     <ButtonGS
                     content="Book Now"
                     uppercase={false}
                     className={` max-lg:py-2 max-lg:rounded-xl max-lg:h-fit
-                    max-lg:w-fit md:!w-full max-lg:text-xs`}
+                    max-lg:!w-fit md:!w-full min-w-full max-lg:text-xs`}
                     />
                 </div>
 

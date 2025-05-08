@@ -12,12 +12,14 @@ const LatestListings = () => {
                 Latest Listings</h3>
             </div>
 
-            <div className='mt-6 md:mt-10 lg:mt-14
-            w-full grid grid-cols-2 md:grid-cols-4
-            gap-5'>
-            {[...Array(4)].map((_, index) => (
-            <ServiceCard key={index} />
-            ))}
+            <div className="overflow-x-auto w-full">
+              <div className='mt-6 md:mt-7
+              w-full flex flex-shrink-0 md:grid md:grid-cols-4
+              gap-3 md:gap-5'>
+                {[...Array(4)].map((_, index) => (
+                <ServiceCard key={index} />
+                ))}
+              </div>
             </div>
 
             <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">

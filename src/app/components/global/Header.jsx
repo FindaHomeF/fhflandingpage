@@ -77,12 +77,17 @@ const Header = () => {
       <div className={`mobile-menu fixed w-screen bg-white top-0 ${active?"left-0":"left-full"} h-screen z-10 transition-all ease-linear duration-300`}>
         <div className="mobile-menu-inner py-16 w-5/6 space-y-10 mx-auto h-full flex flex-col justify-center items-center">
 
-          <div className="menu-outer w-full h-full text-center md:hidden">
+          <div className="menu-outer w-full h-full text-center md:hidden" onClick={()=>setActive(!active)}>
             <ul className="menu-inner font-medium uppercase flex flex-col h-full justify-evenly items-center gap-y-7">
-              <li>Home</li>
+              <Link href={'/'}>
+                <li>Home</li>
+              </Link>
+              <Link href={'/about'}>
+                <li>About</li>
+              </Link>
               <li className="flex items-center gap-x-2">Products <FaAngleDown /></li>
               <li>Testimonial</li>
-              <li>About</li>
+              
               <li>Contact Us</li>
             </ul>
           </div>

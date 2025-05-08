@@ -33,7 +33,7 @@ const How = () => {
 
   return (
     <div className="full">
-        <div className="mx-auto w-5/6 space-y-7 pb-10">
+        <div className="mx-auto w-[90%] md:w-5/6 space-y-7 pb-10">
             <div className="">
                 <div className='text-center space-y-3'>
                     <h3 className="section-head">How It Works</h3>
@@ -68,9 +68,9 @@ const How = () => {
 
                             {buyersHow.map((how, index)=>(
                                 <div className="space-y-3 flex flex-col justify-start items-center text-black text-center" key={index}>
-                                    <h6 className="text-primary text-4xl">{how.icon}</h6>
-                                    <div className="space-y-2">
-                                        <h5 className="text-xl font-medium">{how.head}</h5>
+                                    <h6 className="text-primary text-2xl md:text-4xl">{how.icon}</h6>
+                                    <div className="space-y-1 md:space-y-2">
+                                        <h5 className="text-base md:text-xl font-medium">{how.head}</h5>
                                         <p className="text-sm font-normal">{how.sub}</p>
                                     </div>
                                 </div>
@@ -78,13 +78,13 @@ const How = () => {
 
                         </div>
                         :
-                        <div className="grid grid-cols-3 gap-x-10 flex-wrap-reverse">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 max-lg:gap-7 gap-x-10 flex-wrap-reverse">
 
                             {buyersHow.map((how, index)=>(
                                 <div className="space-y-3 flex flex-col justify-start items-center text-secondary text-center" key={index}>
-                                    <h6 className="text-4xl">{how.icon}</h6>
-                                    <div className="space-y-2">
-                                        <h5 className="text-xl font-medium">{how.head}</h5>
+                                    <h6 className="text-2xl md:text-4xl">{how.icon}</h6>
+                                    <div className="space-y-1 md:space-y-2">
+                                        <h5 className="text-base md:text-xl font-medium">{how.head}</h5>
                                         <p className="text-sm font-normal">{how.sub}</p>
                                     </div>
                                 </div>

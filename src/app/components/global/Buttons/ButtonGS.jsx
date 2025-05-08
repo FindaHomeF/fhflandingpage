@@ -27,8 +27,8 @@ export const SeeAll = ({ whiteBorder = false }) => {
   return (
     <Button className={`
     ${whiteBorder ? "border-[#fff]/70 hover:bg-white/5" : "border-[#0D2740]" }  
-    capitalize text-base md:text-lg tracking-wide bg-[#0D2740] 
-    font-medium h-12 w-[10rem] rounded-full border 
+    capitalize text-sm md:text-base tracking-wide bg-[#0D2740] 
+    font-medium h-10 md:h-12 w-fit md:w-[10rem] rounded-full border 
     flex items-center gap-x-3`}>See All 
     <span className={`bg-white rounded-full text-[#0D2740] p-1`}>
     <GoArrowUpRight size={20}/></span></Button>
