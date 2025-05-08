@@ -1,8 +1,8 @@
 import ListingBox from "../global/ListingBox"
-import List1 from '../../../../public/listing1.png';
-import List2 from '../../../../public/listing2.png';
-import List3 from '../../../../public/listing3.png';
-import List4 from '../../../../public/listing4.png';
+import List1 from '/public/listing1.png';
+import List2 from '/public/listing2.png';
+import List3 from '/public/listing3.png';
+import List4 from '/public/listing4.png';
 
 const Premium = () => {
   return (

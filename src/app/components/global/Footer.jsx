@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import Logo from "../../../../public/Logo/Logosvg.svg"
+import Logo from "/public/Logo/Logosvg.svg"
 import { FaLinkedin, FaWhatsappSquare,FaInstagramSquare,FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
 
 

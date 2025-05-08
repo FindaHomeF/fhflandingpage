@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import RevoImg from '../../../../public/aboutrevo.png'
+import RevoImg from '/public/aboutrevo.png'
 
 const Revolution = () => {
   return (

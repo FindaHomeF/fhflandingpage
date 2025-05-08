@@ -1,7 +1,7 @@
 import Image from "next/image"
 import {ButtonGS, FindaHome} from "../global/Buttons/ButtonGS"
-import Intro from '../../../../public/hero-image.jpeg'
-import PlayBtn from '../../../../public/play.svg'
+import Intro from '/public/hero-image.jpeg'
+import PlayBtn from '/public/play.svg'
 import { abhayaLibre} from '../../layout'
 import { CiCircleChevDown } from "react-icons/ci";
 import Link from "next/link"

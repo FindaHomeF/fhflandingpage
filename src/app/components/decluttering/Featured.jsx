@@ -1,5 +1,5 @@
 import DeclutteredBox from "../global/DeclutteredBox"
-import Declutter from '../../../../public/declutter1.png'
+import Declutter from '/public/declutter1.png'
 
 const Featured = () => {
   return (

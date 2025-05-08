@@ -1,4 +1,4 @@
-import Declutter from '../../../../public/declutter1.png'
+import Declutter from '/public/declutter1.png'
 import { MdSell } from "react-icons/md";
 import { SeeAll } from '../global/Buttons/ButtonGS';
 import Image from 'next/image';

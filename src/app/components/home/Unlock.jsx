@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import UN1 from "../../../../public/unlock1.jpeg"
-import UN2 from "../../../../public/unlock2.png"
-import UNP from "../../../../public/unlockplay.svg"
+import UN1 from "/public/unlock1.jpeg"
+import UN2 from "/public/unlock2.png"
+import UNP from "/public/unlockplay.svg"
 import { UnlockBtn } from "../global/Buttons/ButtonGS"
 
 const Unlock = () => {

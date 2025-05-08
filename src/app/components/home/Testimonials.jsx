@@ -1,6 +1,6 @@
 import Image from "next/image"
-import Quote from '../../../../public/quote.svg'
-import TestI from '../../../../public/testimony.png'
+import Quote from '/public/quote.svg'
+import TestI from '/public/testimony.png'
 import { FiArrowLeftCircle } from "react-icons/fi";
 import { FiArrowRightCircle } from "react-icons/fi";
 

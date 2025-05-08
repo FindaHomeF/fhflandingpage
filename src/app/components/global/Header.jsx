@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
-import Logo from "../../../../public/Logo/Logosvg.svg"
-import LogoM from "../../../../public/fhfmenu2.png"
+import Logo from "/public/Logo/Logosvg.svg"
+import LogoM from "/public/fhfmenu2.png"
 import { Button } from "@/components/ui/button"
 import {ButtonGS} from "./Buttons/ButtonGS"
 import { FaAngleDown } from "react-icons/fa6";

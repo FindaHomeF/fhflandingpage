@@ -2,7 +2,7 @@ import { CiUser } from "react-icons/ci";
 import { GoVerified } from "react-icons/go";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { LuWarehouse } from "react-icons/lu";
-import stepsI from '../../../../public/stepsimage.png'
+import stepsI from '/public/stepsimage.png'
 import Image from "next/image";
 
 const Steps = () => {

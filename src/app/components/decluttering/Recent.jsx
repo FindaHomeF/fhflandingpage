@@ -1,4 +1,4 @@
-import Declutter from '../../../../public/declutter1.png'
+import Declutter from '/public/declutter1.png'
 import DeclutteredBox from "../global/DeclutteredBox"
 
 const Recent = () => {

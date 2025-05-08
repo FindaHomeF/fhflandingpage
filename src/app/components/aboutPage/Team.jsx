@@ -2,14 +2,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import Praise from '../../../../public/praise.PNG'
-import Babs from '../../../../public/babs.PNG'
-import DevDee from '../../../../public/demilade.PNG'
-import Pluto from '../../../../public/pluto.PNG'
-import Pelumi from '../../../../public/pelumi.PNG'
-import Favour from '../../../../public/favour.PNG'
-import Ife from '../../../../public/ife.PNG'
-import Alex from '../../../../public/alex.PNG'
+import Praise from '/public/praise.PNG'
+import Babs from '/public/babs.PNG'
+import DevDee from '/public/demilade.PNG'
+import Pluto from '/public/pluto.PNG'
+import Pelumi from '/public/pelumi.PNG'
+import Favour from '/public/favour.PNG'
+import Ife from '/public/ife.PNG'
+import Alex from '/public/alex.PNG'
 
 
 

@@ -1,6 +1,6 @@
-import PL from '../../../../public/features-apartment.png';
-import Declutter from '../../../../public/features-declutter.png';
-import SP from '../../../../public/features-service.png'
+import PL from '/public/features-apartment.png';
+import Declutter from '/public/features-declutter.png';
+import SP from '/public/features-service.png'
 import Image from 'next/image';
 
 const Features = () => {
