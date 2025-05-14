@@ -33,7 +33,7 @@ const Login = () => {
             </div>
 
             <div className='space-y-7 w-full'>
-                <div className="signinhead text-center space-y-3">
+                <div className="signinhead text-center space-y-2">
                     <h3 className='sign-head'>Sign in to FHF</h3>
                     <p className='sign-para text-gray'>Continue with Find-a-Home FUTA</p>
                 </div>
@@ -60,7 +60,7 @@ const Login = () => {
                         <div className='flex-itc-jub'>
                             <div>
                                 <div className='flex-itc gap-x-2'>
-                                    <input type="checkbox" name="" id="" className=''/>
+                                    <input type="checkbox" name="" id="" className='cursor-pointer'/>
                                     <h6 className='text-black/70 text-sm'>Remember Me</h6>
                                 </div>
 
