@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 
 
@@ -8,10 +9,13 @@ export const ButtonGS = ({
   className='',
  }) => {
   return (
-    <Button className={` 
-    ${className}  
-    ${uppercase && "uppercase"} bg-[#0D2740] 
-    rounded-full h-12 lg:w-[12rem] `}>{ content }</Button>
+    <Link href={'/auth'}>
+      <Button className={` 
+        ${className}  
+        ${uppercase && "uppercase"} bg-[#0D2740] 
+        rounded-full h-12 lg:w-[12rem]`}>{ content }
+      </Button>
+    </Link>
   )
 }
 
@@ -35,8 +39,8 @@ export const SeeAll = ({ whiteBorder = false }) => {
   )
 }
 
-export const UnlockBtn = ({text}) => {
+export const UnlockBtn = ({text, className=''}) => {
   return (
-    <Button className="Capitalize bg-white rounded-full h-12 w-fit text-base font-medium text-[#0D2740] flex items-center">{text}<span className="bg-white rounded-full p-1 border border-[#0D2740]"><GoArrowUpRight size={15}/></span></Button>
+    <Button className={`${className} Capitalize bg-white rounded-full h-12 w-fit text-base font-medium text-[#0D2740] flex items-center"`}>{text}<span className="bg-white rounded-full p-1 border border-[#0D2740]"><GoArrowUpRight size={15}/></span></Button>
   )
 }

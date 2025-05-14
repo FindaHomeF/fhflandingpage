@@ -23,6 +23,15 @@ input{
 .section-para{
   @apply text-base md:text-lg font-medium;
 }
+.sign-head{
+  @apply text-base md:text-3xl font-semibold capitalize;
+}
+.sign-para{
+  @apply text-sm md:text-base font-normal;
+}
+.signup{
+  background: url('../../public/signupbg.png');
+}
 .hero-btn{
   @apply w-3/6 uppercase font-medium text-xs md:text-base h-full rounded-full transition-all ease-linear duration-300;
 }
