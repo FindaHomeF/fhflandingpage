@@ -23,11 +23,11 @@ const SignUpForm = ({head}) => {
 
   return (
     <div>
-        <div className='flex h-screen'>
-            <div className='w-2/6'>
-                <div className='w-5/6 mx-auto py-10'>
-                    <div className='w-full space-y-7'>
-                        <div className="logo w-fit h-[2.8rem]">
+        <div className='md:flex h-screen'>
+            <div className='w-full sticky md:relative top-0 shadow-sm md:shadow-none z-10 bg-white md:w-2/6 border-b md:border-b-0 border-b-black/30'>
+                <div className='w-full text-center md:text-left md:w-5/6 mx-auto pt-10 pb-5 md:py-10'>
+                    <div className='w-full space-y-3 md:space-y-7'>
+                        <div className="logo w-fit mx-auto md:mr-auto h-[2.8rem]">
                             <Image 
                                 src={Logo}
                                 alt="fhflogo"
@@ -45,11 +45,11 @@ const SignUpForm = ({head}) => {
 
 
 
-            <div className='w-4/6 border-l border-l-black/30 h-full'>
-                <div className='w-5/6 mx-auto py-10'>
+            <div className='w-full md:w-4/6 md:border-l border-l-black/30 h-full'>
+                <div className='w-5/6 mx-auto pt-5 md:py-10'>
 
-                    <div className='w-5/6 space-y-5'>
-                        <h3 className='sign-head'>Kindly fill your details</h3>
+                    <div className='w-full md:w-5/6 space-y-5'>
+                        <h3 className='sign-head text-center md:text-left'>Kindly fill your details</h3>
                     
 
                         <form className="w-full " control={control} onSubmit={handleSubmit((data)=>handleSignUp(data))} >

@@ -1,6 +1,7 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form'
 import { FaGoogle } from 'react-icons/fa';
 import Logo from "/public/Logo/Logosvg.svg"
@@ -21,7 +22,7 @@ const Login = () => {
 
   return (
     <div className='w-full h-full flex-col flex-itc-juc'>
-        <div className='space-y-9 w-full'>
+        <div className='space-y-7 md:space-y-9 w-full'>
             <div className="logo w-fit mx-auto h-[3.5rem]">
                 <Image 
                     src={Logo}
@@ -85,8 +86,9 @@ const Login = () => {
                             </div>
                         </div>
                         
-                        <div className='pt-5'>
+                        <div className='pt-5 space-y-2'>
                             <Button className="text-white text-sm h-[3rem] font-medium bg-primary w-full rounded-full">Sign In</Button>
+                            <h6 className='text-center font-semibold text-sm md:hidden'>Don't have an account? <Link href={'/auth/signup/'}><span className='underline cursor-pointer outline-offset-2'>Sign Up</span></Link></h6>
                         </div>
                     </div>
                 </form>
