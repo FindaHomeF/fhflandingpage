@@ -27,7 +27,7 @@ const SignUpForm = ({head}) => {
             <div className='w-full sticky md:relative top-0 shadow-sm md:shadow-none z-10 bg-white md:w-2/6 border-b md:border-b-0 border-b-black/30'>
                 <div className='w-full text-center md:text-left md:w-5/6 mx-auto pt-10 pb-5 md:py-10'>
                     <div className='w-full space-y-3 md:space-y-7'>
-                        <div className="logo w-fit mx-auto md:mr-auto h-[2.8rem]">
+                        <div className="logo w-fit mx-auto md:mx-0 h-[2.8rem]">
                             <Image 
                                 src={Logo}
                                 alt="fhflogo"
