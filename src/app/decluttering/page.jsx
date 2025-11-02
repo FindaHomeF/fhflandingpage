@@ -14,11 +14,12 @@ const page = () => {
         <Header/>
         <main className="space-y-16 md:space-y-20 pt-3 md:pt-16">
             <Hero
-                placeholder={'What items are you looking for?'}
-                mainText={'FHF\'s Marketplace'}
-                subText={'Buy and sell quality used items within the FUTA community'}
-                btn1={'list an item'}
-                btn2={'browse categories'}
+                placeholder={'Search furniture, appliances, books, and more...'}
+                mainText={'Student Marketplace'}
+                subText={'Buy quality pre-owned items or sell what you don\'t need. Save money, help the environment, connect with fellow students.'}
+                btn1={'Sell Your Items'}
+                btn2={'Browse Categories'}  
+                cta2='#categories'
             />
             <Recent/>
             <Featured/>
@@ -35,3 +36,8 @@ const page = () => {
 }
 
 export default page
+
+export const metadata = {
+  title: 'Student Marketplace - Find-a-Home FUTA',
+  description: 'Buy and sell quality pre-owned items within the FUTA community. Furniture, appliances, books, and more. Budget-friendly, eco-conscious, student-focused.',
+}

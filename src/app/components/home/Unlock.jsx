@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import UN1 from "/public/unlock1.jpeg"
-import UN2 from "/public/unlock2.png"
-import UNP from "/public/unlockplay.svg"
 import { UnlockBtn } from "../global/Buttons/ButtonGS"
+
+const UN1 = "/unlock1.jpeg"
+const UN2 = "/unlock2.png"
+const UNP = "/unlockplay.svg"
 
 const Unlock = () => {
   return (
-    <div className="unlock-outer bg-[#0D2740] py-10 md:py-20 pb-10 md:pb-[8.5rem]">
-        <div className="unlock-inner w-[90%] md:w-5/6 mx-auto block md:flex items-start justify-between gap-x-10">
+    <div className="unlock-outer bg-primary py-10 md:py-20 pb-10 md:pb-[8.5rem]">
+        <div className="unlock-inner w-[90%] md:w-5/6 mx-auto block md:flex items-center justify-between gap-x-10">
             <div className="unlock-left relative w-full md:w-3/6">
                 <div className="unlock1 relative w-[90%] md:w-4/6 h-[34rem] rounded-2xl overflow-hidden">
                     <Image
@@ -29,7 +30,7 @@ const Unlock = () => {
                     />
                 </div>
 
-                <div className="absolute bg-[#0D2740] w-[17rem] rounded-lg flex items-center justify-start gap-x-2 p-2  top-[10%] left-[28%] ">
+                <div className="absolute bg-primary w-[17rem] rounded-lg flex items-center justify-start gap-x-2 p-2  top-[10%] left-[28%] ">
                     <div className="unlock1 w-[2.5rem] h-[2.5rem]  rounded-full overflow-hidden">
                         <Image
                             src={UNP}
@@ -41,7 +42,7 @@ const Unlock = () => {
                     </div>
                     <div className="font-medium">
                         <h4 className="text-white text-sm ">Take House Tour</h4>
-                        <h6 className="text-[#FDA51E] text-[0.625rem]">Watch Video</h6>
+                        <h6 className="text-secondaryVariant text-[0.625rem]">Watch Video</h6>
                     </div>
 
                 </div>
@@ -50,15 +51,15 @@ const Unlock = () => {
 
             <div className="unlock-right text-white w-full md:w-3/6 space-y-7 mt-16 ">
                 <div className="space-y-2">
-                    <h3 className="font-bold text-2xl md:text-4xl pb-3">Unlock Your Dream Home. Browse Our Curated Property Listings and Decluttering Solutions.</h3>
-                    <p className="text-base md:text-base font-normal pb-1 text-[#ffffffb2]">Browse our curated property listings, featuring high-quality photos and detailed descriptions. From cozy apartments to spacious houses, find your dream house or list your property with us today!</p>
-                    <UnlockBtn text={'Send Us a Message!'}/>
+                    <h3 className="font-bold text-2xl md:text-4xl pb-3">Start Your Housing Journey Today</h3>
+                    <p className="text-base md:text-base font-normal pb-5 text-textMuted">Explore our curated collection of student-friendly accommodations. Every listing features high-quality photos, detailed descriptions, and transparent pricing. Take virtual tours, read reviews from fellow students, and find your perfect home—all in one place.</p>
+                    <UnlockBtn className="px-10" text={'Explore Properties Now'} cta='/apartments'/>
                 </div>
 
-                <div className="space-y-3">
+                {/* <div className="space-y-3">
                     <div>
                         <h3 className="text-white font-semibold text-xl md:text-2xl capitalize">Don't Miss out. Join Our Waitlist today!</h3>
-                        <p className="text-sm font-normal text-[#ffffffb2]">Be among one of the early pioneers to access our platform once we launch. There might just be perks in it for you</p>
+                        <p className="text-sm font-normal text-textMuted">Be among one of the early pioneers to access our platform once we launch. There might just be perks in it for you</p>
                     </div>
                     
                     <form action="" className="flex items-center gap-x-3">
@@ -69,7 +70,7 @@ const Unlock = () => {
                         />
                         <Button className="rounded-md bg-secondary w-1/6 text-sm font-semibold h-10">Join</Button>
                     </form>
-                </div>
+                </div> */}
                 {/* <div className="space-y-2">
                     <p className="text-base md:text-xl font-normal pb-2">
                         Declutter and earn! Our platform helps you turn unwanted items 

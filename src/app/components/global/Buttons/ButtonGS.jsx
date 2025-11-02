@@ -4,43 +4,70 @@ import { GoArrowUpRight } from "react-icons/go";
 
 
 export const ButtonGS = ({ 
-  content="Start Your Search", 
+  content="Browse Apartments", 
   uppercase = true,
   className='',
+  cta = '/apartments'
  }) => {
   return (
-    <Link href={'/auth'}>
+    <Link href={cta}>
       <Button className={` 
         ${className}  
-        ${uppercase && "uppercase"} bg-[#0D2740] 
+        ${uppercase && "uppercase"} 
+        bg-primary font-medium
         rounded-full h-12 lg:w-[12rem]`}>{ content }
       </Button>
     </Link>
   )
 }
 
-export const FindaHome = ({ content = "List Your Property", uppercase = true }) => {
+export const FindaHome = ({ content = "List Your Property", uppercase = true, cta='/auth' }) => {
   return (
-    <Button className={` ${uppercase && "uppercase"} bg-transparent rounded-full h-12 
-    w-[12rem] border border-[#0D2740] text-[#0D2740] 
-    hover:bg-black/0 lg:hover-bg-[#0D2740]/20 `}>{ content }</Button>
+    <Link href={cta}>
+      <Button className={` 
+        ${uppercase && "uppercase"} 
+        bg-transparent rounded-full h-12 
+        w-[12rem] border border-primary text-primary 
+        hover:bg-black/0 lg:hover-bg-primary/20 `}>
+          { content }
+      </Button>
+    </Link>
   )
 }
 
-export const SeeAll = ({ whiteBorder = false }) => {
+export const SeeAll = ({ 
+  whiteBorder = false, 
+  cta = '/apartments/all',
+  filterType,
+  filterValue
+}) => {
+  // Build URL with query params for filtering
+  const buildUrl = () => {
+    if (!filterType) return cta;
+    
+    const url = new URL(cta, 'http://localhost');
+    if (filterType) url.searchParams.set('filterType', filterType);
+    if (filterValue) url.searchParams.set('filterValue', filterValue);
+    return `${url.pathname}${url.search}`;
+  };
+
   return (
-    <Button className={`
-    ${whiteBorder ? "border-[#fff]/70 hover:bg-white/5" : "border-[#0D2740]" }  
-    capitalize text-sm md:text-base tracking-wide bg-[#0D2740] 
-    font-medium h-10 md:h-12 w-fit md:w-[10rem] rounded-full border 
-    flex items-center gap-x-3`}>See All 
-    <span className={`bg-white rounded-full text-[#0D2740] p-1`}>
-    <GoArrowUpRight size={20}/></span></Button>
+    <Link href={buildUrl()}>
+      <Button className={`
+      ${whiteBorder ? "border-whiteOpacity hover:bg-white/5" : "border-primary" }  
+      capitalize text-sm md:text-base tracking-wide bg-primary 
+      font-medium h-10 md:h-12 w-fit md:w-[10rem] rounded-full border 
+      flex items-center gap-x-3`}>See All 
+      <span className={`bg-white rounded-full text-primary p-1`}>
+      <GoArrowUpRight size={20}/></span></Button>
+    </Link>
   )
 }
 
-export const UnlockBtn = ({text, className=''}) => {
-  return (
-    <Button className={`${className} Capitalize bg-white rounded-full h-12 w-fit text-base font-medium text-[#0D2740] flex items-center"`}>{text}<span className="bg-white rounded-full p-1 border border-[#0D2740]"><GoArrowUpRight size={15}/></span></Button>
+export const UnlockBtn = ({text, className='', cta='/auth'}) => {
+  return ( 
+    <Link href={cta}>
+      <Button className={`${className} Capitalize bg-white rounded-full h-12 w-fit text-base font-semibold text-primary flex items-center"`}>{text}<span className="bg-white rounded-full p-1 border border-primary"><GoArrowUpRight size={15}/></span></Button>
+    </Link>
   )
 }

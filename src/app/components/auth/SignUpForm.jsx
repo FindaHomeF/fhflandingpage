@@ -1,9 +1,10 @@
 'use client'
 import Image from 'next/image';
 import { useForm } from 'react-hook-form'
-import Logo from "/public/Logo/Logosvg.svg"
 import { FaEye } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
+
+const Logo = "/Logo/Logosvg.svg"
 
 
 

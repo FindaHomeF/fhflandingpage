@@ -32,3 +32,8 @@ const page = () => {
 }
 
 export default page
+
+export const metadata = {
+  title: 'About Us - Find-a-Home FUTA',
+  description: 'Learn about Find-a-Home FUTA. Built by FUTA students, for FUTA students. Transforming student housing in Akure, one home at a time.',
+}

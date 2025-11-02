@@ -1,8 +1,12 @@
 'use client'
 import Image from "next/image"
-import Logo from "/public/Logo/Logosvg.svg"
-import LogoM from "/public/fhfmenu2.png"
 import { Button } from "@/components/ui/button"
+import WishlistPanel from "./WishlistPanel"
+import CartPanel from "./CartPanel"
+import UserNotificationCenter from "./UserNotificationCenter"
+
+const Logo = "/Logo/Logosvg.svg"
+const LogoM = "/fhfmenu2.png"
 import {ButtonGS} from "./Buttons/ButtonGS"
 import { FaAngleDown } from "react-icons/fa6";
 import { GoArrowUpRight } from "react-icons/go";
@@ -16,9 +20,9 @@ const Header = () => {
   const [active, setActive] = useState(false)
 
   return (
-    <div className="header-outer w-[90%] mx-auto font-medium -mb-10 md:mb-0 relative">
+    <div className="header-outer w-[95%] mx-auto font-medium -mb-10 md:mb-0 relative">
       <div className="header-inner w-full flex justify-between 
-      items-center md:my-5 my-4#0D2740 max-lg:-mt-6">
+      items-center md:my-5 my-4 max-lg:-mt-6">
         <Link href={'/'} className='w-1/6 hidden md:block'>
           <motion.div className="logo-container w-full " layoutId='logo-animate'>
             <Image src={Logo}
@@ -43,9 +47,10 @@ const Header = () => {
         <div className="menu-outer w-auto hidden md:block">
           <ul className="menu-inner h-10 px-5  uppercase gap-x-7 text-sm font-medium tracking-wide cursor-pointer flex w-full items-center">
             <Link href='/about'><li>About Us</li></Link>
+            <Link href='/contact'><li>Contact</li></Link>
             <li className=" z-10 relative group h-full transition-all ease-linear duration-300">
               <div className="flex items-center gap-x-2 relative min-h-full">Products <FaAngleDown /></div> 
-              <ul className="absolute transition-all ease-linear duration-300 text-white bg-tetiary space-y-2 border-t-2 border-t-secondary w-fit px-3 py-2 text-nowrap group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none">
+              <ul className="absolute transition-all ease-linear duration-300 text-white bg-tertiary space-y-2 border-t-2 border-t-secondary w-fit px-3 py-2 text-nowrap group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none">
                 <Link 
                 className="cursor-pointer"
                 href={'/apartments'}><li >Apartment Listings</li></Link>
@@ -57,19 +62,24 @@ const Header = () => {
                 href={'/decluttering'} ><li className="mt-2">decluttering</li></Link>
               </ul>
             </li>
-            <li>Testimonial</li>
-            <li>Contact Us</li>
+            <Link href={'/#testimonials'}><li>Testimonial</li></Link>
           </ul>
         </div>
 
-        <div className="text-base md:flex items-center gap-x-3 w-fit hidden ">
-          <Button className="bg-transparent shadow-none text-black flex 
-          items-center gap-x-2 hover:bg-transparent group h-[3.375rem] w-fit">
-            JOIN WAITLIST <GoArrowUpRight className="group-hover:animate-bounce" /></Button>
-          <ButtonGS/>
+        <div className="text-base md:flex items-center gap-x-2 w-fit hidden ">
+          <Link href="/auth">
+            <Button className="bg-transparent shadow-none text-black flex 
+            items-center gap-x-2 hover:bg-transparent group h-[3.375rem] w-fit uppercase">
+              Login <GoArrowUpRight className="group-hover:animate-bounce" />
+            </Button>
+          </Link>
+          {/* <ButtonGS content="Explore"/> */}
+          <WishlistPanel />
+          <CartPanel />
+          <UserNotificationCenter />
         </div>
 
-        <div className=" md:hidden z-20 text-[#0D2740]" onClick={()=>setActive(!active)}>
+        <div className=" md:hidden z-20 text-primary" onClick={()=>setActive(!active)}>
           {active?<LuWarehouse size={30}/>:<FaWarehouse size={30} />}
         </div>
       </div>
@@ -85,10 +95,22 @@ const Header = () => {
               <Link href={'/about'}>
                 <li>About</li>
               </Link>
-              <li className="flex items-center gap-x-2">Products <FaAngleDown /></li>
-              <li>Testimonial</li>
-              
-              <li>Contact Us</li>
+              <li className="z-10 relative group">
+                <div className="flex items-center gap-x-2">Products <FaAngleDown /></div>
+                <ul className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all space-y-2 py-2 min-w-[180px]">
+                  <Link href={'/apartments'} onClick={() => setActive(false)}>
+                    <li className="px-4 py-2 hover:bg-gray-50 cursor-pointer">Apartment Listings</li>
+                  </Link>
+                  <Link href={'/service'} onClick={() => setActive(false)}>
+                    <li className="px-4 py-2 hover:bg-gray-50 cursor-pointer">Hire for a service</li>
+                  </Link>
+                  <Link href={'/decluttering'} onClick={() => setActive(false)}>
+                    <li className="px-4 py-2 hover:bg-gray-50 cursor-pointer">Decluttering</li>
+                  </Link>
+                </ul>
+              </li>
+              <Link href={'/#testimonials'}><li>Testimonial</li></Link>
+              <Link href={'/contact'}><li>Contact Us</li></Link>
             </ul>
           </div>
 
@@ -102,7 +124,6 @@ const Header = () => {
 
         </div>
       </div>
-
     </div>
   )
 }

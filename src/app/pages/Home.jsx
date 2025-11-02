@@ -1,5 +1,4 @@
-// 'use client'
-// import { useState } from "react";
+
 import Decluttered from "../components/home/Decluttered";
 import Features from "../components/home/Features";
 import About from "../components/home/About";

@@ -1,10 +1,12 @@
+"use client"
 import { SeeAll } from "../global/Buttons/ButtonGS"
-import List1 from '/public/listing1.png';
-import List2 from '/public/listing2.png';
-import List3 from '/public/listing3.png';
-import List4 from '/public/listing4.png';
 import Image from "next/image";
 import ListingBox from "../global/ListingBox";
+
+const List1 = '/listing1.png';
+const List2 = '/listing2.png';
+const List3 = '/listing3.png';
+const List4 = '/listing4.png';
 
 const Listings = ({ title = "Property listings" }) => {
   return (
@@ -14,18 +16,21 @@ const Listings = ({ title = "Property listings" }) => {
                 { title }
             </h3>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-hidden">
                 <div className="w-full flex flex-nowrap md:grid-cols-4 gap-3 md:gap-x-5">
                     {[List1, List2, List3, List4].map((list, index)=>(
                         <div key={index}>
-                            <ListingBox image={list}/>
+                            <ListingBox image={list} propertyId={`${index + 1}`} itemIndex={index + 500} />
                         </div>
                     ))}
                 </div>
             </div>
 
             <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
-                <SeeAll/>
+                <SeeAll 
+                    cta="/apartments/all"
+                    filterType="recent"
+                />
             </div>
         </div>
     </div>

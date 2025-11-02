@@ -11,22 +11,19 @@ const Page = () => {
   return (
     <div className="bg-white w-full overflow-x-hidden 
         scroll-smooth transition-all ease-linear duration-500">
-        <main className="space-y-16 md:space-y-16">
+        <main>
         <div className="space-y-10">
             <Header/>
-            <div className='w-[90%] mx-auto md:w-4/6 '>
-                <Filter placeholder={'What apartment are you looking for?'}/>
-            </div>  
 
             <div>
-            <ImagesAndDescriptionDisplay/>
-            <Details/>
-            <div className='py-8 md:py-10'>
-                <Listings
-                title='Similar Listings'
-                />
-            </div>
-            <FooterCta/>
+              <ImagesAndDescriptionDisplay/>
+              <Details/>
+              <div className='py-8 md:py-10'>
+                  <Listings
+                  title='Similar Listings'
+                  />
+              </div>
+              <FooterCta/>
             </div>
         </div>
         </main>

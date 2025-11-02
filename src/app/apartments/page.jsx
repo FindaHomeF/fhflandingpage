@@ -14,11 +14,12 @@ const page = () => {
         <Header/>
         <main className="space-y-16 md:space-y-20 pt-3 md:pt-16">
           <Hero 
-              placeholder={'What apartment are you looking for?'}
-              mainText={'Find Your Perfect Home'}
-              subText={'View verified apartments and properties near FUTA'}
-              btn1={'list an item'}
-              btn2={'browse categories'}
+              placeholder={'Search by location, price, or amenities...'}
+              mainText={'Discover Your Ideal Student Apartment'}
+              subText={'Browse verified properties near FUTA campus. Quality homes, transparent pricing, trusted landlords.'}
+              btn1={'List Your Property'}
+              btn2={'Browse Categories'}
+              cta2='#categories'
           />
           <Available/>
           <Premium/>
@@ -34,3 +35,8 @@ const page = () => {
 }
 
 export default page
+
+export const metadata = {
+  title: 'Student Apartments - Find-a-Home FUTA',
+  description: 'Discover verified student apartments near FUTA campus. Quality homes, transparent pricing, trusted landlords. Find your perfect accommodation today.',
+}

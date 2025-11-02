@@ -11,38 +11,38 @@ const Values = () => {
     const values = [
         {
             icon:<SiTrustpilot/>,
-            head:'Trust',
-            para:'Trust Through Transparency'
+            head:'Trust & Transparency',
+            para:'Every property verified. Every price honest. No hidden fees, no surprises—just transparent housing solutions.'
 
         },
         {
             icon:<RiUserCommunityFill />,
-            head:'Community Building',
-            para:'Fostering connections beyond housing.'
+            head:'Student-First Community',
+            para:'Built by students, for students. We understand your budget, your needs, and your challenges.'
 
         },
         {
             icon:<GoVerified/>,
-            head:'Verified Services',
-            para:'Every listing verified, every service provider vetted'
+            head:'Quality Assurance',
+            para:'Rigorous vetting of properties and service providers ensures you only get the best options.'
 
         },
         {
             icon:<MdAddHomeWork />,
-            head:'More Than Just a Home',
-            para:'Creating connections beyond just housing'
+            head:'Comprehensive Solutions',
+            para:'Beyond housing—access furniture, services, and everything you need for student life in one place.'
 
         },
         {
             icon:<GiChoice/>,
-            head:'Empowering Choices',
-            para:'Helping you make informed decisions effortlessly.'
+            head:'Empowered Decisions',
+            para:'Detailed listings, honest reviews, and powerful filters help you choose with confidence.'
 
         },
         {
             icon:<FaChartPie/>,
-            head:'Decisions Backed by Data',
-            para:'Making informed decisions possible through technology'
+            head:'Innovation-Driven',
+            para:'Cutting-edge technology meets student housing, making your search faster and smarter.'
 
         },
 
@@ -53,8 +53,8 @@ const Values = () => {
     <div className="w-full">
         <div className="mx-auto w-[90%] md:w-5/6">
             <div className="head text-center space-y-3">
-                <h3 className="section-head">Our Values</h3>
-                <p className="section-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3 className="section-head">What Drives Us Every Day</h3>
+                <p className="section-para">These core values guide everything we do—from verifying properties to supporting our community.</p>
             </div>
 
             <div className="w-full flex flex-col md:flex-row justify-between items-center gap-y-10 gap-x-14 mt-7 md:mt-16">

@@ -1,9 +1,22 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { SeeAll } from '../global/Buttons/ButtonGS'
 import ServiceCard from './service-card'
 import { Button } from '@/components/ui/button'
 
 const Categories = () => {
+  const [activeCategory, setActiveCategory] = useState("Cleaning Services");
+
+  const categories = [
+    "Cleaning Services",
+    "Moving & Transportation",
+    "Electrical Work",
+    "Plumbing Services",
+    "Carpentry & Furniture",
+    "Interior Decoration",
+    "Others"
+  ];
+
   return (
     <div>
         <div className='mt-12 w-[90%] mx-auto'>
@@ -15,18 +28,24 @@ const Categories = () => {
 
             <div className="overflow-x-auto">
               <div className="mt-8 flex flex-nowrap justify-center items-center gap-3">
-                <Button className="cat-btn text-white !bg-secondary">Cleaning Services</Button>
-                <Button className="cat-btn">Moving & Transportation</Button>
-                <Button className="cat-btn">Electrical Work</Button>
-                <Button className="cat-btn">Plumbing Services</Button>
-                <Button className="cat-btn">Carpentry & Furniture</Button>
-                <Button className="cat-btn">Interior Decoration</Button>
-                <Button className="cat-btn">Others</Button>
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    onClick={() => setActiveCategory(category)}
+                    className={`cat-btn ${
+                      activeCategory === category
+                        ? "text-white !bg-secondary"
+                        : ""
+                    }`}
+                  >
+                    {category}
+                  </Button>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="overflow-x-auto w-full">
+          <div className="overflow-x-hidden w-full">
             <div className='mt-6 md:mt-7
             w-full flex flex-shrink-0 md:grid md:grid-cols-4
             gap-3 md:gap-5'>
@@ -37,7 +56,11 @@ const Categories = () => {
           </div>
 
           <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
-            <SeeAll/>
+            <SeeAll 
+              cta="/service/all"
+              filterType="category"
+              filterValue={activeCategory}
+            />
           </div>
         </div>
     </div>

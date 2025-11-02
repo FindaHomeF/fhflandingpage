@@ -15,18 +15,18 @@ const How = () => {
     const buyersHow = [
         {
             icon:<GoVerified/>,
-            head:'Browse verified listings',
-            sub:'Browse a wide selection of properties that meet your needs and budget.',
+            head:'Browse Quality Items',
+            sub:'Explore verified listings with detailed photos and honest descriptions from fellow students.',
         },
         {
             icon:<LuMessageSquareLock />,
-            head:'Contact seller through our secure system',
-            sub:'Access reliable services from professionals dedicated to students.',
+            head:'Connect Securely',
+            sub:'Message sellers safely through our platform. Negotiate prices and arrange meetups.',
         },
         {
             icon:<FaRegHandshake />,
-            head:'Meet safely and complete purchase',
-            sub:'Find everything you need for student life at great prices.',
+            head:'Complete Your Purchase',
+            sub:'Meet in safe locations, inspect items, and complete transactions with peace of mind.',
         },
     ]
 
@@ -36,13 +36,12 @@ const How = () => {
         <div className="mx-auto w-[90%] md:w-5/6 space-y-7 pb-10">
             <div className="">
                 <div className='text-center space-y-3'>
-                    <h3 className="section-head">How It Works</h3>
+                    <h3 className="section-head">How Our Marketplace Works</h3>
                     <p className='section-para mx-auto lg:w-4/6 pb-3'>
-                    Find-a-Home FUTA revolutionizes your housing 
-                    search with verified properties tailored for FUTA 
-                    students. Our platform ensures a seamless experience, 
-                    connecting you with trusted service providers and 
-                    essential resources.</p>
+                        Simple, safe, and student-friendly. Whether you're buying essentials for your new place or selling items 
+                        you no longer need, our secure platform makes it easy. Connect with fellow FUTA students, negotiate fairly, 
+                        and complete transactions with confidence.
+                    </p>
                     
                     <div className="h-12 lg:w-[30%] mt-3 mx-auto flex  
                     justify-center gap-x-5 text-base font-semibold 
@@ -97,14 +96,14 @@ const How = () => {
                 <div className="h-12 lg:w-2/6 mx-auto flex justify-center 
                 gap-x-5 text-base font-semibold">
                     <Button className="bg-primary h-full text-white hover:bg-secondary 
-                    rounded-full w-3/6 flex items-center gap-x-2">Learn More 
+                    rounded-full w-3/6 flex items-center gap-x-2">Start Shopping
                         <span className="bg-white h-5 w-5 rounded-full 
                         flex justify-center items-center">
                         <GoArrowUpRight className="text-xs text-primary" /></span>
                     </Button>
 
                     <Button className="bg-transparent h-full border border-primary text-primary
-                     hover:bg-darkBlue/5 rounded-full w-3/6">Join Waitlist</Button>
+                     hover:bg-darkBlue/5 rounded-full w-3/6">List an Item</Button>
                 </div>
             </div>
         </div>

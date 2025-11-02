@@ -4,12 +4,15 @@ import { SeeAll } from '../global/Buttons/ButtonGS'
 
 const TopRatedProfessionals = () => {
   return (
-    <div className='mt-10 w-full bg-darkBlue py-10 md:py-12'>
+    <div className='mt-12 w-full bg-primary py-10 '>
         <div className='w-[90%] mx-auto'>
-            <div>
-                <h3 className='font-semibold text-center mt-12 md:mt-16 
+            <div className='text-center space-y-3'>
+                <h3 className='font-semibold text-center mt-12
                 text-2xl md:text-4xl lg:text-[40px] text-white'>
                     Top-Rated Professionals</h3>
+                <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto">
+                  Our highest-rated service providers. Proven track records, verified credentials, and stellar student reviews.
+                </p>
             </div>
 
             <div className="overflow-x-auto w-full">
@@ -25,7 +28,9 @@ const TopRatedProfessionals = () => {
             <div className="mx-auto w-full flex justify-center 
             items-center mt-5 md:mt-12">
                 <SeeAll
-                whiteBorder
+                    cta="/service/all"
+                    filterType="featured"
+                    whiteBorder
                 />
             </div>
 

@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form'
 import { FaGoogle } from 'react-icons/fa';
-import Logo from "/public/Logo/Logosvg.svg"
+
+const Logo = "/Logo/Logosvg.svg"
 
 const Login = () => {
     const {

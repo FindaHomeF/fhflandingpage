@@ -6,10 +6,13 @@ const LatestListings = () => {
   return (
     <div>
         <div className='mt-12 md:mt-16 w-[90%] mx-auto'>
-            <div>
+            <div className='text-center space-y-3'>
                 <h3 className='font-semibold text-center mt-12 md:mt-16 
                 text-2xl md:text-4xl lg:text-[40px]'>
-                Latest Listings</h3>
+                Recently Added Professionals</h3>
+                <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+                  New service providers just joined our platform. Discover fresh talent ready to help with your accommodation needs.
+                </p>
             </div>
 
             <div className="overflow-x-auto w-full">
@@ -23,7 +26,10 @@ const LatestListings = () => {
             </div>
 
             <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
-                <SeeAll/>
+                <SeeAll 
+                    cta="/service/all"
+                    filterType="recent"
+                />
             </div>
 
         </div>

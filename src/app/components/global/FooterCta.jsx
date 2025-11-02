@@ -12,18 +12,10 @@ const FooterCta = () => {
         <div className="mx-auto z-10 w-[90%] md:w-5/6  text-white space-y-7">
             <div className='space-y-3 w-full'>
                 <h3 className='section-head text-center'>
-                    Be Part of the Housing Revolution
+                    Ready to Find Your Perfect Home?
                 </h3>
-                {/* <p className='section-para'>Join our community and find the ideal off-campus housing that suits your needs today!</p> */}
-                
-                {/* <p className="text-lg font-normal">
-                    Be among one of the early pioneers to 
-                    access our platform once we launch. 
-                    There might just be perks in it for you
-                </p> */}
-                    <p className="mt-3 text-lg font-normal text-center">
-                    Join our community and find the ideal off-campus 
-                    housing that suits your needs today!
+                <p className="mt-3 text-lg md:text-xl font-normal text-center max-w-3xl mx-auto">
+                    Join thousands of FUTA students who've already found their ideal accommodation. Start exploring verified properties, connect with trusted service providers, and discover amazing deals on student essentials.
                 </p>
             </div>
             
@@ -43,8 +35,8 @@ const FooterCta = () => {
             <div className="cta-buttons text-base flex-itc-juc
              gap-x-5 font-semibold transition-all ease-linear duration-300">
                 <Button className="hover:bg-secondary 
-                bg-white w-fit px-5 text-black h-12 
-                rounded-3xl transition-colors duration-300">Learn More
+                bg-white w-fit px-6 text-black h-12 
+                rounded-3xl transition-colors duration-300">Browse Properties
                  <span className='w-5 h-5 flex-itc-juc 
                  bg-darkBlue text-white rounded-full'>
                     <GoArrowUpRight size={20}/>
@@ -52,7 +44,7 @@ const FooterCta = () => {
                 </Button>
                 <Button className="hover:bg-darkBlue/10 
                 bg-transparent border border-white 
-                w-fit px-5 text-white h-12 rounded-3xl">Join Waitlist
+                w-fit px-6 text-white h-12 rounded-3xl">Get Started
                 </Button>
             </div>
 

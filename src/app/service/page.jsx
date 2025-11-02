@@ -49,3 +49,8 @@ const page = () => {
 }
 
 export default page
+
+export const metadata = {
+  title: 'Service Providers - Find-a-Home FUTA',
+  description: 'Connect with verified service providers for all your accommodation needs. From movers to maintenance—trusted professionals backed by student reviews.',
+}

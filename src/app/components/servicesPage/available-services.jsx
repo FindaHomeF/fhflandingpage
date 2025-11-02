@@ -5,10 +5,13 @@ import { SeeAll } from '../global/Buttons/ButtonGS'
 const AvailableServices = () => {
   return (
     <div className='w-[90%] mx-auto'>
-        <div>
+        <div className='text-center space-y-3'>
             <h3 className='font-semibold text-center mt-12 md:mt-16 
             text-2xl md:text-4xl lg:text-[40px]'>
-                Available Services</h3>
+                Trusted Service Providers</h3>
+            <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+              Connect with verified professionals for all your accommodation needs. Quality work, fair pricing, backed by student reviews.
+            </p>
         </div>
 
         <div className="overflow-x-auto w-full">
@@ -22,7 +25,7 @@ const AvailableServices = () => {
         </div>
         
         <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
-          <SeeAll/>
+          <SeeAll cta='/service/all'/>
         </div>
 
     </div>

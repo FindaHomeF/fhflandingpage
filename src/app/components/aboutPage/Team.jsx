@@ -2,14 +2,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import Praise from '/public/praise.PNG'
-import Babs from '/public/babs.PNG'
-import DevDee from '/public/demilade.PNG'
-import Pluto from '/public/pluto.PNG'
-import Pelumi from '/public/pelumi.PNG'
-import Favour from '/public/favour.PNG'
-import Ife from '/public/ife.PNG'
-import Alex from '/public/alex.PNG'
+
+const Praise = '/praise.PNG'
+const Babs = '/babs.PNG'
+const DevDee = '/demilade.PNG'
+const Pluto = '/pluto.PNG'
+const Pelumi = '/pelumi.PNG'
+const Favour = '/favour.PNG'
+const Ife = '/ife.PNG'
+const Alex = '/alex.PNG'
 
 
 
@@ -119,15 +120,18 @@ const Team = () => {
     <div className="w-full pt-10">
         <div className="mx-auto w-[90%] md:w-5/6">
             <div className="head space-y-2 mb-7 md:mb-12">
-                <h3 className="section-head">The Minds Behind Find-a-Home FUTA</h3>
-                <p className="section-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3 className="section-head">Meet the Team Making It Happen</h3>
+                <p className="section-para">
+                  A passionate team of FUTA students and alumni dedicated to transforming student housing. 
+                  We're tech enthusiasts, problem-solvers, and student advocates building the future of accommodation.
+                </p>
             </div>
 
             <div className="team-info w-full">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-y-10">
                     {members.map((who, index)=>(
                         <div key={index} className="relative group cursor-pointer pointer-events-auto">
-                            <div className="transition-all pointer-events-auto ease-linear duration-300 image bg-gray overflow-hidden h-[10rem] md:h-[15rem] relative after:pointer-events-none  after:absolute after:w-full after:h-full  group-hover:after:bg-black/70 after:top-0 after:left-0 md:after:z-[-1]">
+                            <div className="transition-all pointer-events-auto ease-linear duration-300 image bg-gray overflow-hidden h-[10rem] md:h-[15rem] relative after:pointer-events-none  after:absolute after:w-full after:h-full  group-hover:after:bg-black/70 after:top-0 after:left-0 md:after:z-[-1] group-hover:scale-[1.03] ">
                                 <Image
                                     alt="members of FHF profile"
                                     src={who.image}
@@ -143,7 +147,7 @@ const Team = () => {
                                     <h6 className="capitalize text-sm font-semibold truncate">{who.role}</h6>
                                 </div>
 
-                                <p className="font-normal text-sm line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                                <p className="font-normal text-sm line-clamp-2">Passionate about improving student housing and creating meaningful impact for the FUTA community.</p>
                             
                                 <div className="socials pt-2 flex items-center md:justify-start justify-center gap-x-2 text-2xl cursor-pointer">
                                     <Link href={'#'}><FaLinkedin/></Link>

@@ -1,3 +1,5 @@
+import tailwindcssAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -11,14 +13,57 @@ export default {
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
-			gray:'var(--gray)',
-			primary:'var(--primary)',
-			secondary:'var(--secondary)',
-			tetiary:'var(--tetiary)',
-			lightSec:'var(--light-sec)',
-			graySec:'var(--gray-secondary)',
-			lightGray:'var(--light-gray)',
-			darkBlue:'#0D2740',
+			
+			// Primary Colors
+			primary: 'var(--primary)',
+			primaryOpacity: 'var(--primary-opacity)',
+			primaryHover: 'var(--primary-hover)',
+			
+			// Secondary Colors
+			secondary: 'var(--secondary)',
+			secondaryVariant: 'var(--secondary-variant)',
+			
+			// Tertiary Colors
+			tertiary: 'var(--tertiary)',
+			
+			// Neutral Colors - Grays
+			gray: 'var(--gray)',
+			graySec: 'var(--gray-secondary)',
+			lightGray: 'var(--gray-light)',
+			lighterGray: 'var(--gray-lighter)',
+			borderGray: 'var(--gray-border)',
+			darkGray: 'var(--gray-dark)',
+			grayBg: 'var(--gray-background)',
+			
+			// Text Colors
+			textPrimary: 'var(--text-primary)',
+			textSecondary: 'var(--text-secondary)',
+			textMuted: 'var(--text-muted)',
+			
+			// Chart & Data Visualization Colors
+			chartBlue: 'var(--chart-blue)',
+			chartGreen: 'var(--chart-green)',
+			chartGreenLight: 'var(--chart-green-light)',
+			chartYellow: 'var(--chart-yellow)',
+			chartPurple: 'var(--chart-purple)',
+			chartRed: 'var(--chart-red)',
+			
+			// Base Colors
+			white: 'var(--white)',
+			black: 'var(--black)',
+			
+			// Opacity Variants
+			black10: 'var(--black-10)',
+			black33: 'var(--black-33)',
+			black66: 'var(--black-66)',
+			white70: 'var(--white-70)',
+			whiteOpacity: 'var(--white-opacity)',
+			borderOpacity: 'var(--border-opacity)',
+			
+			// Status Colors
+			success: 'var(--success)',
+			warning: 'var(--warning)',
+			error: 'var(--error)',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -69,6 +114,6 @@ export default {
         },
       });
       },
-      require("tailwindcss-animate")
+      tailwindcssAnimate
 ],
 };
