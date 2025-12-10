@@ -1,0 +1,256 @@
+// TanStack Query mutations for data mutations
+// Centralized mutation functions for create/update/delete operations
+
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { saveToStorage } from './query-options'
+import { toast } from 'sonner'
+
+// Property mutations
+export const useCreateProperty = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (property) => {
+      const stored = JSON.parse(localStorage.getItem('properties') || '[]')
+      const newProperty = {
+        ...property,
+        id: property.id || `prop-${Date.now()}`,
+        propertyId: property.propertyId || property.id || `prop-${Date.now()}`,
+        datePosted: property.datePosted || new Date().toISOString(),
+        status: property.status || 'Active'
+      }
+      const updated = [...stored, newProperty]
+      saveToStorage('properties', updated)
+      return newProperty
+    },
+    onSuccess: (data, variables, context) => {
+      queryClient.invalidateQueries({ queryKey: ['properties'] })
+      toast.success('Property created successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to create property')
+      console.error('Error creating property:', error)
+    }
+  })
+}
+
+export const useUpdateProperty = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async ({ id, updates }) => {
+      const stored = JSON.parse(localStorage.getItem('properties') || '[]')
+      const updated = stored.map(p => 
+        (p.id === id || p.propertyId === id) ? { ...p, ...updates } : p
+      )
+      saveToStorage('properties', updated)
+      return updated.find(p => p.id === id || p.propertyId === id)
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['properties'] })
+      toast.success('Property updated successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to update property')
+      console.error('Error updating property:', error)
+    }
+  })
+}
+
+export const useDeleteProperty = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (id) => {
+      const stored = JSON.parse(localStorage.getItem('properties') || '[]')
+      const updated = stored.filter(p => p.id !== id && p.propertyId !== id)
+      saveToStorage('properties', updated)
+      return id
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['properties'] })
+      toast.success('Property deleted successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to delete property')
+      console.error('Error deleting property:', error)
+    }
+  })
+}
+
+// Item mutations
+export const useCreateItem = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (item) => {
+      const stored = JSON.parse(localStorage.getItem('items') || '[]')
+      const newItem = {
+        ...item,
+        id: item.id || `#D${Date.now().toString().padStart(3, '0')}`,
+        itemId: item.itemId || item.id || `#D${Date.now().toString().padStart(3, '0')}`,
+        datePosted: item.datePosted || new Date().toISOString(),
+        status: item.status || 'Available'
+      }
+      const updated = [...stored, newItem]
+      saveToStorage('items', updated)
+      return newItem
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['items'] })
+      toast.success('Item created successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to create item')
+      console.error('Error creating item:', error)
+    }
+  })
+}
+
+export const useUpdateItem = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async ({ id, updates }) => {
+      const stored = JSON.parse(localStorage.getItem('items') || '[]')
+      const updated = stored.map(i => 
+        (i.id === id || i.itemId === id) ? { ...i, ...updates } : i
+      )
+      saveToStorage('items', updated)
+      return updated.find(i => i.id === id || i.itemId === id)
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['items'] })
+      toast.success('Item updated successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to update item')
+      console.error('Error updating item:', error)
+    }
+  })
+}
+
+export const useDeleteItem = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (id) => {
+      const stored = JSON.parse(localStorage.getItem('items') || '[]')
+      const updated = stored.filter(i => i.id !== id && i.itemId !== id)
+      saveToStorage('items', updated)
+      return id
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['items'] })
+      toast.success('Item deleted successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to delete item')
+      console.error('Error deleting item:', error)
+    }
+  })
+}
+
+// Service mutations
+export const useCreateService = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (service) => {
+      const stored = JSON.parse(localStorage.getItem('services') || '[]')
+      const newService = {
+        ...service,
+        id: service.id || `svc-${Date.now()}`,
+        serviceId: service.serviceId || service.id || `svc-${Date.now()}`,
+        datePosted: service.datePosted || new Date().toISOString(),
+        status: service.status || 'Active'
+      }
+      const updated = [...stored, newService]
+      saveToStorage('services', updated)
+      return newService
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['services'] })
+      toast.success('Service created successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to create service')
+      console.error('Error creating service:', error)
+    }
+  })
+}
+
+export const useUpdateService = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async ({ id, updates }) => {
+      const stored = JSON.parse(localStorage.getItem('services') || '[]')
+      const updated = stored.map(s => 
+        (s.id === id || s.serviceId === id) ? { ...s, ...updates } : s
+      )
+      saveToStorage('services', updated)
+      return updated.find(s => s.id === id || s.serviceId === id)
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['services'] })
+      toast.success('Service updated successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to update service')
+      console.error('Error updating service:', error)
+    }
+  })
+}
+
+export const useDeleteService = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async (id) => {
+      const stored = JSON.parse(localStorage.getItem('services') || '[]')
+      const updated = stored.filter(s => s.id !== id && s.serviceId !== id)
+      saveToStorage('services', updated)
+      return id
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['services'] })
+      toast.success('Service deleted successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to delete service')
+      console.error('Error deleting service:', error)
+    }
+  })
+}
+
+// Transaction mutations
+export const useCreateTransaction = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationFn: async ({ userId, userType, transaction }) => {
+      const key = `${userType}Transactions-${userId}`
+      const stored = JSON.parse(localStorage.getItem(key) || '[]')
+      const newTransaction = {
+        ...transaction,
+        id: transaction.id || `txn-${Date.now()}`,
+        date: transaction.date || new Date().toISOString()
+      }
+      const updated = [...stored, newTransaction]
+      saveToStorage(key, updated)
+      return newTransaction
+    },
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ 
+        queryKey: ['transactions', variables.userId, variables.userType] 
+      })
+      toast.success('Transaction recorded successfully!')
+    },
+    onError: (error) => {
+      toast.error('Failed to create transaction')
+      console.error('Error creating transaction:', error)
+    }
+  })
+}
+

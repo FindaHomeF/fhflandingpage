@@ -197,7 +197,7 @@ const ServiceDetailsPage = ({ serviceId }) => {
   return (
     <div className="space-y-6 pb-12">
       {/* Navigation Bar */}
-      <div className="bg-white rounded-lg shadow-sm max-h-screen overflow-y-auto pb-28">
+      <div className="bg-white rounded-lg shadow-sm max-h-screen">
         <div className="flex items-center justify-between sticky top-0 bg-white z-10 pb-8 pt-4 border-b backdrop-blur-md px-6 border-b-black10">
           <button
             onClick={handleBack}

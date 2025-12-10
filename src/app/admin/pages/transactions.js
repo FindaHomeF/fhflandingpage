@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import AdminTable from '../components/AdminTable'
+import AdminTableWithBulk from '../components/AdminTableWithBulk'
 import StatsCard from '../components/StatsCard'
 import { DollarSign, CreditCard, Clock, XCircle } from 'lucide-react'
 
@@ -220,9 +220,13 @@ const TransactionsPage = () => {
     router.push(`/admin/transactions/${encodedId}`);
   }, [router]);
 
+  const handleBulkAction = useCallback((action, selectedIds) => {
+    console.log('Bulk action:', action, selectedIds)
+    // Add your bulk action logic here
+  }, []);
+
   return (
-    <div className="h-full">
-        <div className="space-y-6 px-6 overflow-y-auto h-full pb-28">
+    <div className="space-y-6 px-6 pb-12">
             {/* Stats Cards */}
             <div className="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-auto max-w-full">
                 <StatsCard
@@ -367,7 +371,7 @@ const TransactionsPage = () => {
 
             {/* Table */}
             <div className="bg-white rounded-lg shadow-sm">
-                <AdminTable
+                <AdminTableWithBulk
                 columns={columns}
                 paginationData={{
                     currentTransactions: paginationData.currentTransactions,
@@ -383,9 +387,10 @@ const TransactionsPage = () => {
                 pageNumbers={pageNumbers}
                 getStatusBadge={getStatusBadge}
                 onRowClick={handleRowClick}
+                bulkActions={['approve', 'reject', 'export']}
+                onBulkAction={handleBulkAction}
                 />
             </div>
-        </div>
     </div>
     )
 }

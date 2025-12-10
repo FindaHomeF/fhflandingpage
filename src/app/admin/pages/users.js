@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import AdminTable from '../components/AdminTable'
+import AdminTableWithBulk from '../components/AdminTableWithBulk'
 import { useRouter } from 'next/navigation'
 
 // Mock data for users
@@ -167,6 +167,11 @@ const UsersPage = () => {
   const handleRowClick = useCallback((user) => {
     router.push(`/admin/users/${encodeURIComponent(user.id)}`)
   }, [router])
+
+  const handleBulkAction = useCallback((action, selectedIds) => {
+    console.log('Bulk action:', action, selectedIds)
+    // Add your bulk action logic here
+  }, [])
 
   const handlePageChange = useCallback((page) => {
     setCurrentPage(page)
@@ -372,7 +377,7 @@ const UsersPage = () => {
 
       {/* Table */}
       <div className="bg-white">
-        <AdminTable
+        <AdminTableWithBulk
           columns={columns}
           paginationData={{
             currentUsers: paginationData.currentUsers,
@@ -400,6 +405,8 @@ const UsersPage = () => {
               </Badge>
             )
           }}
+          bulkActions={['approve', 'suspend', 'delete', 'export']}
+          onBulkAction={handleBulkAction}
         />
       </div>
     </div>

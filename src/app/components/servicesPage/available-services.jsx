@@ -2,9 +2,11 @@ import React from 'react'
 import ServiceCard from './service-card'
 import { SeeAll } from '../global/Buttons/ButtonGS'
 
+import { CardScroll, CardWrapper } from "@/components/ui/card-grid";
+
 const AvailableServices = () => {
   return (
-    <div className='w-[90%] mx-auto'>
+    <div className='w-[90%] max-w-full mx-auto'>
         <div className='text-center space-y-3'>
             <h3 className='font-semibold text-center mt-12 md:mt-16 
             text-2xl md:text-4xl lg:text-[40px]'>
@@ -14,15 +16,13 @@ const AvailableServices = () => {
             </p>
         </div>
 
-        <div className="overflow-x-auto w-full">
-          <div className='mt-6 md:mt-7
-          w-full flex flex-shrink-0 md:grid md:grid-cols-4
-          gap-3 md:gap-5'>
-            {[...Array(4)].map((_, index) => (
-            <ServiceCard key={index} />
-            ))}
-          </div>
-        </div>
+        <CardScroll>
+          {[...Array(4)].map((_, index) => (
+            <CardWrapper key={index} minWidth="min-w-[280px] md:min-w-0">
+              <ServiceCard />
+            </CardWrapper>
+          ))}
+        </CardScroll>
         
         <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
           <SeeAll cta='/service/all'/>
