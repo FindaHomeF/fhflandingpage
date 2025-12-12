@@ -4,7 +4,8 @@ import { Abhaya_Libre } from 'next/font/google';
 import ToasterProvider from './components/global/ToasterProvider';
 import { WishlistProvider } from '@/contexts/WishlistContext';
 import { CartProvider } from '@/contexts/CartContext';
-
+import { DataProvider } from '@/contexts/DataContext';
+import { QueryProvider } from '@/components/providers/QueryProvider';
 
 // Initialize the font with desired subsets and weights
 const mulish = Mulish({
@@ -27,18 +28,21 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  
   return (
       <html lang="en">
         <body
           className={`${mulish.className}  antialiased`}
         >   
-         <WishlistProvider>
-          <CartProvider>
-            <ToasterProvider />
-            {children}
-          </CartProvider>
-         </WishlistProvider>
+         <QueryProvider>
+           <DataProvider>
+            <WishlistProvider>
+              <CartProvider>
+                <ToasterProvider />
+                {children}
+              </CartProvider>
+            </WishlistProvider>
+           </DataProvider>
+         </QueryProvider>
         </body>
       </html>
   );

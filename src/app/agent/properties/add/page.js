@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea'
 import ImageUpload from '@/app/admin/pages/components/ImageUpload'
 import QuantitySelector from '@/app/admin/pages/components/QuantitySelector'
+import CommissionCalculator from '@/components/ui/commission-calculator'
+import PremiumToggle from '@/components/ui/premium-toggle'
 import { toast } from 'sonner'
 
 const fileToBase64 = (file) => {
@@ -69,9 +71,12 @@ const AddPropertyPage = () => {
       inventory: 1,
       otherFeatures: '',
       featuredImage: null,
-      otherImages: []
+      otherImages: [],
+      isPremium: false
     }
   })
+
+  const price = watch('price')
 
   const onSubmit = async (data) => {
     try {
@@ -135,7 +140,9 @@ const AddPropertyPage = () => {
         inventory: parseInt(data.inventory) || 1,
         otherFeatures: data.otherFeatures || '',
         status: 'Pending', // Properties need admin approval
-        images: images.slice(0, 5)
+        images: images.slice(0, 5),
+        isPremium: data.isPremium || false,
+        premiumExpiry: data.isPremium ? new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString() : null
       }
       
       existingProperties.push(propertyData)
@@ -210,11 +217,21 @@ const AddPropertyPage = () => {
                   {errors.price && (
                     <p className="text-red-500 text-sm mt-1">{errors.price.message}</p>
                   )}
+                  {/* Commission Calculator */}
+                  {price && parseFloat(price) > 0 && (
+                    <div className="mt-3">
+                      <CommissionCalculator 
+                        price={parseFloat(price)} 
+                        type="apartment" 
+                        isAdmin={false}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Description *
+                    Description * 
                   </label>
                   <Textarea
                     {...register('description', { required: 'Description is required' })}
@@ -396,6 +413,17 @@ const AddPropertyPage = () => {
                     Separate multiple features with commas or list them one per line
                   </p>
                 </div>
+              </div>
+
+              <div className="col-span-full mt-6">
+                {/* Premium Toggle */}
+                <PremiumToggle
+                  listingId="new"
+                  listingType="apartment"
+                  currentPremium={watch('isPremium')}
+                  onToggle={(value) => setValue('isPremium', value)}
+                  isAdmin={false}
+                />
               </div>
             </div>
           </form>

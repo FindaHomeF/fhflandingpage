@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { ArrowLeft, Download, FileSpreadsheet, CheckCircle, XCircle, Ban, Mail, Phone, MapPin, Calendar, User, Shield } from 'lucide-react';
+import { ArrowLeft, Download, FileSpreadsheet, CheckCircle, XCircle, Ban, Mail, Phone, MapPin, Calendar, User, Shield, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
+import { validateStudentId } from '@/lib/studentIdValidation';
 
 const UserDetailsPage = ({ userId }) => {
   const router = useRouter();
@@ -326,7 +328,7 @@ const UserDetailsPage = ({ userId }) => {
 
   return (
     <div className="space-y-6 pb-12">
-      <div className="bg-white rounded-lg shadow-sm max-h-screen overflow-y-auto pb-28">
+      <div className="bg-white rounded-lg shadow-sm max-h-screen">
         <div className="flex items-center justify-between sticky top-0 bg-white z-10 pb-8 pt-4 border-b backdrop-blur-md px-6 border-b-black10">
           <button
             onClick={handleBack}
@@ -457,6 +459,34 @@ const UserDetailsPage = ({ userId }) => {
                 <span className="font-medium text-gray-700">Location:</span>
                 <span className="text-gray-900">{user.location || 'N/A'}</span>
               </div>
+
+              {user.role === 'student' && (user.studentIdNumber || user.enrollmentNumber) && (
+                <div className="flex justify-between items-start py-2 border-b border-dashed border-black33">
+                  <span className="font-medium text-gray-700">Student ID:</span>
+                  <div className="text-right max-w-xs">
+                    <span className="text-gray-900">{user.studentIdNumber || user.enrollmentNumber}</span>
+                    {user.studentIdNumber && (() => {
+                      const validation = validateStudentId(user.studentIdNumber);
+                      if (validation.isValid && validation.isExpired) {
+                        return (
+                          <div className="mt-2 flex items-center gap-2 justify-end">
+                            <Badge className="bg-yellow-100 text-yellow-800 border border-yellow-300">
+                              <AlertTriangle className="w-3 h-3 mr-1" />
+                              Flagged: {validation.yearsSinceAdmission} years since admission
+                            </Badge>
+                          </div>
+                        );
+                      }
+                      return null;
+                    })()}
+                    {user.studentIdValidation?.flagged && (
+                      <div className="mt-2 p-2 bg-yellow-50 border border-yellow-200 rounded text-xs text-yellow-800">
+                        Admission: {user.studentIdValidation.admissionYear} ({user.studentIdValidation.yearsSinceAdmission} years ago)
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
 
               <div className="flex justify-between items-center py-2 border-b border-dashed border-black33">
                 <span className="font-medium text-gray-700">Properties Listed:</span>

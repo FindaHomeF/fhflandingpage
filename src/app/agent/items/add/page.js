@@ -7,6 +7,8 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import ImageUpload from '@/app/admin/pages/components/ImageUpload'
+import CommissionCalculator from '@/components/ui/commission-calculator'
+import PremiumToggle from '@/components/ui/premium-toggle'
 import { toast } from 'sonner'
 import { useAgent } from '../../context/AgentContext'
 import { Lock, AlertCircle } from 'lucide-react'
@@ -65,9 +67,12 @@ const AddItemPage = () => {
       sellerName: '',
       inventory: 1,
       featuredImage: null,
-      otherImages: []
+      otherImages: [],
+      isPremium: false
     }
   })
+
+  const price = watch('price')
 
   if (!canManageItems) {
     return (
@@ -167,7 +172,9 @@ const AddItemPage = () => {
         description: data.description,
         inventory: parseInt(data.inventory) || 1,
         status: 'Pending', // Items need admin approval
-        images: images.slice(0, 5)
+        images: images.slice(0, 5),
+        isPremium: data.isPremium || false,
+        premiumExpiry: data.isPremium ? new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString() : null
       }
       
       existingItems.push(itemData)
@@ -240,6 +247,16 @@ const AddItemPage = () => {
                   </div>
                   {errors.price && (
                     <p className="text-red-500 text-sm mt-1">{errors.price.message}</p>
+                  )}
+                  {/* Commission Calculator */}
+                  {price && parseFloat(price) > 0 && (
+                    <div className="mt-3">
+                      <CommissionCalculator 
+                        price={parseFloat(price)} 
+                        type="decluttering" 
+                        isAdmin={false}
+                      />
+                    </div>
                   )}
                 </div>
 
@@ -376,6 +393,17 @@ const AddItemPage = () => {
                     <p className="text-red-500 text-sm mt-1">{errors.inventory.message}</p>
                   )}
                 </div>
+              </div>
+
+              <div className="col-span-full mt-6">
+                {/* Premium Toggle */}
+                <PremiumToggle
+                  listingId="new"
+                  listingType="item"
+                  currentPremium={watch('isPremium')}
+                  onToggle={(value) => setValue('isPremium', value)}
+                  isAdmin={false}
+                />
               </div>
             </div>
           </form>

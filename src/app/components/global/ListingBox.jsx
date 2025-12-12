@@ -41,7 +41,7 @@ const ListingBox = ({image, propertyId = "1", item = null, itemIndex = 0}) => {
   const isOutOfStock = inventory !== null && inventory === 0;
 
   return (
-    <div className={`listings-box shadow shadow-black10 rounded-xl bg-white overflow-hidden border group border-black33 ${isOutOfStock ? 'opacity-60' : ''}`}>
+    <div className={`listings-box w-full shadow shadow-black10 rounded-xl bg-white overflow-hidden border group border-black33 ${isOutOfStock ? 'opacity-60' : ''}`}>
         <div className="listing-image h-[10rem] md:h-[13.75rem] relative overflow-hidden ">
             <Link
             href={`/sp/${displayItem.propertyId}`}

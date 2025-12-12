@@ -101,7 +101,7 @@ export default function ReportsPage() {
 
   return (
     <div className="space-y-6 pb-12">
-      <div className="bg-white rounded-lg shadow-sm max-h-[calc(100vh-8rem)] overflow-y-auto">
+      <div className="bg-white rounded-lg shadow-sm">
         {/* Header Section with Title and Generate Button */}
         <div className="flex items-center justify-between sticky top-0 bg-white z-10 pb-6 pt-4 border-b border-black10 px-6">
         <div>

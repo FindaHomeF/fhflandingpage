@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import AdminTable from '../components/AdminTable'
+import AdminTableWithBulk from '../components/AdminTableWithBulk'
 import { useRouter } from 'next/navigation'
 
 // Mock data for services
@@ -236,6 +236,11 @@ const ServicesPage = () => {
     router.push(`/admin/services/${encodeURIComponent(service.id)}`)
   }, [router])
 
+  const handleBulkAction = useCallback((action, selectedIds) => {
+    console.log('Bulk action:', action, selectedIds)
+    // Add your bulk action logic here
+  }, [])
+
   // Define columns for the table
   const columns = useMemo(() => [
     { key: 'id', label: 'ID', width: 'w-20', truncate: true },
@@ -338,7 +343,7 @@ const ServicesPage = () => {
 
       {/* Table */}
       <div className="bg-white rounded-lg shadow-sm">
-        <AdminTable
+        <AdminTableWithBulk
           columns={columns}
           data={filteredServices}
           currentPage={currentPage}
@@ -350,6 +355,8 @@ const ServicesPage = () => {
           statusBadgeStyles={statusBadgeStyles}
           getStatusBadge={getStatusBadge}
           onRowClick={handleRowClick}
+          bulkActions={['approve', 'reject', 'delete', 'export']}
+          onBulkAction={handleBulkAction}
         />
       </div>
     </div>

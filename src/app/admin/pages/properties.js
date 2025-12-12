@@ -1,17 +1,18 @@
 'use client'
 import React, { useState, useMemo, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import { Search, Filter, Download, Plus, MoreVertical } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import AdminTable from '../components/AdminTable'
+import AdminTableWithBulk from '../components/AdminTableWithBulk'
 
 // Mock data to match the image
 const mockProperties = [
   {
-    id: "#1234",
+    id: "1234",
     title: "Marble Lodge",
     ownerName: "John Doe",
     category: "Flat",
@@ -22,7 +23,7 @@ const mockProperties = [
     status: "Active"
   },
   {
-    id: "#1234",
+    id: "1234-2",
     title: "Marble Lodge",
     ownerName: "John Doe",
     category: "Single Room",
@@ -33,7 +34,7 @@ const mockProperties = [
     status: "Pending"
   },
   {
-    id: "#1234",
+    id: "1234-3",
     title: "Marble Lodge",
     ownerName: "John Doe",
     category: "Shared Apart...",
@@ -44,7 +45,7 @@ const mockProperties = [
     status: "Inactive"
   },
   {
-    id: "#1234",
+    id: "1234-4",
     title: "Marble Lodge",
     ownerName: "John Doe",
     category: "Flat",
@@ -55,7 +56,7 @@ const mockProperties = [
     status: "Active"
   },
   {
-    id: "#1234",
+    id: "1234-5",
     title: "Marble Lodge",
     ownerName: "John Doe",
     category: "Single Room",
@@ -66,7 +67,7 @@ const mockProperties = [
     status: "Pending"
   },
   {
-    id: "#1235",
+    id: "1235",
     title: "Sunset Villa",
     ownerName: "Jane Smith",
     category: "House",
@@ -77,7 +78,7 @@ const mockProperties = [
     status: "Active"
   },
   {
-    id: "#1236",
+    id: "1236",
     title: "Student Haven",
     ownerName: "Mike Johnson",
     category: "Single Room",
@@ -88,7 +89,7 @@ const mockProperties = [
     status: "Inactive"
   },
   {
-    id: "#1237",
+    id: "1237",
     title: "Modern Apartment",
     ownerName: "Sarah Wilson",
     category: "Flat",
@@ -99,7 +100,7 @@ const mockProperties = [
     status: "Pending"
   },
   {
-    id: "#1238",
+    id: "1238",
     title: "Cozy Studio",
     ownerName: "David Brown",
     category: "Studio",
@@ -110,7 +111,7 @@ const mockProperties = [
     status: "Active"
   },
   {
-    id: "#1239",
+    id: "1239",
     title: "Luxury Suite",
     ownerName: "Emily Davis",
     category: "Penthouse",
@@ -126,7 +127,6 @@ export default function PropertiesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [dateFilter, setDateFilter] = useState('all')
   const [categoryFilter, setCategoryFilter] = useState('all')
-  const [conditionFilter, setConditionFilter] = useState('all')
   const [statusFilter, setStatusFilter] = useState('all')
   
   // Pagination state
@@ -153,17 +153,15 @@ export default function PropertiesPage() {
   // Memoized filter values to avoid repeated calculations
   const filterValues = useMemo(() => ({
     category: categoryFilter.toLowerCase(),
-    condition: conditionFilter.toLowerCase(),
     status: statusFilter.toLowerCase(),
     isAllCategory: categoryFilter === 'all',
-    isAllCondition: conditionFilter === 'all',
     isAllStatus: statusFilter === 'all',
     isAllDate: dateFilter === 'all'
-  }), [categoryFilter, conditionFilter, statusFilter, dateFilter])
+  }), [categoryFilter, statusFilter, dateFilter])
 
   // Optimized filtering with useMemo and early returns
   const filteredProperties = useMemo(() => {
-    if (filterValues.isAllCategory && filterValues.isAllCondition && filterValues.isAllStatus && filterValues.isAllDate) {
+    if (filterValues.isAllCategory && filterValues.isAllStatus && filterValues.isAllDate) {
       return allProperties // Return all properties if no filters applied
     }
 
@@ -173,10 +171,6 @@ export default function PropertiesPage() {
       
       // Optimized string comparisons with early returns
       if (!filterValues.isAllCategory && !property.category.toLowerCase().includes(filterValues.category)) {
-        return false
-      }
-      
-      if (!filterValues.isAllCondition && !property.condition.toLowerCase().includes(filterValues.condition)) {
         return false
       }
       
@@ -234,9 +228,6 @@ export default function PropertiesPage() {
         break
       case 'category':
         setCategoryFilter(value)
-        break
-      case 'condition':
-        setConditionFilter(value)
         break
       case 'status':
         setStatusFilter(value)
@@ -305,13 +296,18 @@ export default function PropertiesPage() {
     { key: 'category', label: 'Category', width: 'w-28', truncate: true },
     { key: 'location', label: 'Location', width: 'w-32', truncate: true },
     { key: 'price', label: 'Price', width: 'w-24', fontMedium: true },
-    { key: 'condition', label: 'Condition', width: 'w-24' },
     { key: 'inventory', label: 'Inventory', width: 'w-24' },
     { key: 'status', label: 'Status', width: 'w-24' }
   ], [])
 
+  const router = useRouter()
   const handleRowClick = useCallback((property) => {
-    window.location.href = `/admin/properties/${property.id}`
+    router.push(`/admin/properties/${property.id}`)
+  }, [router])
+
+  const handleBulkAction = useCallback((action, selectedIds) => {
+    console.log('Bulk action:', action, selectedIds)
+    // Add your bulk action logic here
   }, [])
 
 
@@ -352,29 +348,19 @@ export default function PropertiesPage() {
                   </SelectContent>
                 </Select>
 
-                <Select value={conditionFilter} onValueChange={(value) => handleFilterChange('condition', value)}>
-                  <SelectTrigger className="w-32 bg-black10 border-none shadow-none rounded-lg">
-                    <SelectValue placeholder="Good" />
-            </SelectTrigger>
-            <SelectContent>
-                    <SelectItem value="all">All Condition</SelectItem>
-                    <SelectItem value="good">Good</SelectItem>
-                    <SelectItem value="fair">Fair</SelectItem>
-                    <SelectItem value="poor">Poor</SelectItem>
-            </SelectContent>
-          </Select>
+                
 
                 <Select value={statusFilter} onValueChange={(value) => handleFilterChange('status', value)}>
                   <SelectTrigger className="w-32 bg-black10 border-none shadow-none rounded-lg">
                     <SelectValue placeholder="All Status" />
-            </SelectTrigger>
-            <SelectContent>
-                    <SelectItem value="all">All Status</SelectItem>
-                    <SelectItem value="active">Active</SelectItem>
-                    <SelectItem value="pending">Pending</SelectItem>
-                    <SelectItem value="inactive">Inactive</SelectItem>
-            </SelectContent>
-          </Select>
+                    </SelectTrigger>
+                    <SelectContent>
+                            <SelectItem value="all">All Status</SelectItem>
+                            <SelectItem value="active">Active</SelectItem>
+                            <SelectItem value="pending">Pending</SelectItem>
+                            <SelectItem value="inactive">Inactive</SelectItem>
+                    </SelectContent>
+                  </Select>
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -404,7 +390,7 @@ export default function PropertiesPage() {
 
           {/* Table */}
           <div className="bg-white rounded-lg shadow-sm">
-            <AdminTable
+            <AdminTableWithBulk
               columns={columns}
               data={filteredProperties}
               currentPage={currentPage}
@@ -422,6 +408,8 @@ export default function PropertiesPage() {
               statusBadgeStyles={statusBadgeStyles}
               getStatusBadge={getStatusBadge}
               onRowClick={handleRowClick}
+              bulkActions={['approve', 'reject', 'delete', 'export']}
+              onBulkAction={handleBulkAction}
             />
           </div>
       </div>

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import AdminTable from '../components/AdminTable'
+import AdminTableWithBulk from '../components/AdminTableWithBulk'
 
 // Mock data for decluttered items
 const mockItems = [
@@ -371,6 +371,11 @@ export default function ItemsPage() {
     router.push(`/admin/items/${encodeURIComponent(item.id)}`)
   }, [router])
 
+  const handleBulkAction = useCallback((action, selectedIds) => {
+    console.log('Bulk action:', action, selectedIds)
+    // Add your bulk action logic here
+  }, [])
+
   return (
     <div className="space-y-6 px-6">
       {/* Page Header */}
@@ -458,7 +463,7 @@ export default function ItemsPage() {
 
       {/* Table */}
       <div className="bg-white rounded-lg shadow-sm">
-        <AdminTable
+        <AdminTableWithBulk
           columns={columns}
           data={filteredItems}
           currentPage={currentPage}
@@ -466,7 +471,7 @@ export default function ItemsPage() {
           handlePrevious={handlePrevious}
           handleNext={handleNext}
           paginationData={{
-            currentProperties: paginationData.currentItems,
+            currentItems: paginationData.currentItems,
             startIndex: paginationData.startIndex,
             endIndex: paginationData.endIndex,
             totalItems: paginationData.totalItems,
@@ -476,6 +481,8 @@ export default function ItemsPage() {
           statusBadgeStyles={statusBadgeStyles}
           getStatusBadge={getStatusBadge}
           onRowClick={handleRowClick}
+          bulkActions={['approve', 'reject', 'delete', 'export']}
+          onBulkAction={handleBulkAction}
         />
       </div>
     </div>

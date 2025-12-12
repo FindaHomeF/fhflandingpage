@@ -9,6 +9,8 @@ import { toast } from 'sonner'
 import { useAgent } from '../context/AgentContext'
 import { Badge } from '@/components/ui/badge'
 import Image from 'next/image'
+import StudentIdInput from '@/components/ui/student-id-input'
+import { validateStudentId, formatStudentId } from '@/lib/studentIdValidation'
 
 const fileToBase64 = (file) => {
   return new Promise((resolve, reject) => {
@@ -29,14 +31,18 @@ export default function AgentProfilePage() {
     defaultValues: {
       description: '',
       location: '',
+      studentIdNumber: '',
     }
   })
+
+  const [studentIdValidation, setStudentIdValidation] = useState(null)
 
   useEffect(() => {
     if (agentProfile) {
       reset({
         description: agentProfile.description || '',
         location: agentProfile.location || '',
+        studentIdNumber: agentProfile.studentIdNumber || '',
       })
       if (agentProfile.profilePicture) {
         setProfileImage(agentProfile.profilePicture)
@@ -82,12 +88,43 @@ export default function AgentProfilePage() {
 
   const onSubmit = async (data) => {
     try {
-      setAgentProfile({
-        description: data.description,
-        location: data.location,
-        userType: userType
-      })
-      toast.success('Profile updated successfully!')
+      // Validate student ID if user type is student and ID is provided
+      if (userType === 'student' && data.studentIdNumber) {
+        const validation = validateStudentId(data.studentIdNumber)
+        if (!validation.isValid) {
+          toast.error(validation.error)
+          return
+        }
+        
+        const profileData = {
+          description: data.description,
+          location: data.location,
+          userType: userType,
+          studentIdNumber: formatStudentId(data.studentIdNumber),
+          studentIdValidation: {
+            admissionYear: validation.admissionYear,
+            yearsSinceAdmission: validation.yearsSinceAdmission,
+            isExpired: validation.isExpired,
+            flagged: validation.isExpired
+          }
+        }
+        
+        setAgentProfile(profileData)
+        
+        if (validation.isExpired) {
+          toast.warning(validation.warning, { duration: 6000 })
+        } else {
+          toast.success('Profile updated successfully!')
+        }
+      } else {
+        setAgentProfile({
+          description: data.description,
+          location: data.location,
+          userType: userType,
+          studentIdNumber: data.studentIdNumber || ''
+        })
+        toast.success('Profile updated successfully!')
+      }
     } catch (error) {
       console.error('Error updating profile:', error)
       toast.error('Failed to update profile. Please try again.')
@@ -234,6 +271,23 @@ export default function AgentProfilePage() {
                 Select based on your ID document type
               </p>
             </div>
+
+            {/* Student ID Number - Only show if user type is student */}
+            {userType === 'student' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Student ID Number
+                </label>
+                <StudentIdInput
+                  value={watch('studentIdNumber')}
+                  onChange={(e) => {
+                    setValue('studentIdNumber', e.target.value)
+                  }}
+                  onValidationChange={setStudentIdValidation}
+                  placeholder="CYS/19/0575"
+                />
+              </div>
+            )}
 
             {/* ID Document Upload */}
             <div className="border-t border-black10 pt-6">

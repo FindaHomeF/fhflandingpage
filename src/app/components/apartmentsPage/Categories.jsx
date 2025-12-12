@@ -3,6 +3,7 @@ import { useState } from "react";
 import ListingBox from "../global/ListingBox"
 import { Button } from "@/components/ui/button";
 import { SeeAll } from "../global/Buttons/ButtonGS";
+import { CardScroll, CardWrapper } from "@/components/ui/card-grid";
 
 const List1 = '/listing1.png';
 const List2 = '/listing2.png';
@@ -23,7 +24,7 @@ const Categories = () => {
 
   return (
     <div className="full">
-        <div className="mx-auto w-[90%] md:w-5/6 space-y-7" id="categories">
+        <div className="mx-auto w-[90%] max-w-full md:w-5/6 space-y-7" id="categories">
             <div className="space-y-7">
                 <h3 className="section-head text-center">Categories</h3>
 
@@ -46,15 +47,13 @@ const Categories = () => {
                 </div>
             </div>
             
-            <div className="overflow-x-hidden">
-                <div className="w-full flex flex-nowrap md:grid-cols-4 gap-3 md:gap-x-5">
-                    {[List1, List2, List3, List4].map((list, index)=>(
-                        <div key={index}>
-                            <ListingBox image={list} propertyId={`${index + 30}`} itemIndex={index + 800} />
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <CardScroll>
+                {[List1, List2, List3, List4].map((list, index)=>(
+                    <CardWrapper key={index} minWidth="min-w-[280px] md:min-w-0">
+                        <ListingBox image={list} propertyId={`${index + 30}`} itemIndex={index + 800} />
+                    </CardWrapper>
+                ))}
+            </CardScroll>
             <div className="mx-auto w-full flex justify-center items-center mt-5 md:mt-12">
                 <SeeAll 
                     cta="/apartments/all"

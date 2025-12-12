@@ -301,9 +301,9 @@ const TransactionDetailsPage = ({ transactionId }) => {
 
   return (
     <div className="space-y-6 pb-12">
-      <div className="bg-white rounded-lg shadow-sm max-h-[calc(100vh-8rem)] overflow-y-auto">
+      <div className="bg-white rounded-lg shadow-sm max-h-screen">
         {/* Header Section with Back and Download Buttons */}
-        <div className="flex items-center justify-between sticky top-0 bg-white z-10 pb-6 pt-4 border-b border-black10 px-6">
+        <div className="flex items-center justify-between sticky top-0 bg-white z-10 pb-8 pt-4 border-b backdrop-blur-md px-6 border-b-black10">
           <button
             onClick={handleBack}
             className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors"

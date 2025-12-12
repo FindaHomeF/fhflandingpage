@@ -1,8 +1,7 @@
 'use client'
-import React, { memo, useState } from 'react'
-import { MoreHorizontal, Check, CheckSquare, Square } from 'lucide-react'
+import React, { memo, useState, useEffect } from 'react'
+import { MoreHorizontal, Check, CheckSquare, Square, CheckCircle2, Trash2, Download, XCircle, Ban, Power } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog'
 import { toast } from 'sonner'
 
@@ -40,7 +39,7 @@ const AdminTableWithBulk = ({
   }
 
   const toggleSelectAll = () => {
-    if (selectAll) {
+    if (selectAll || selectedItems.length === currentItems.length) {
       setSelectedItems([])
       setSelectAll(false)
     } else {
@@ -48,6 +47,15 @@ const AdminTableWithBulk = ({
       setSelectAll(true)
     }
   }
+
+  // Update selectAll state when selectedItems changes
+  useEffect(() => {
+    if (selectedItems.length === currentItems.length && currentItems.length > 0) {
+      setSelectAll(true)
+    } else if (selectedItems.length < currentItems.length) {
+      setSelectAll(false)
+    }
+  }, [selectedItems, currentItems])
 
   const handleBulkAction = (action) => {
     if (selectedItems.length === 0) {
@@ -79,6 +87,18 @@ const AdminTableWithBulk = ({
       activate: 'Activate'
     }
     return labels[action] || action
+  }
+
+  const getActionIcon = (action) => {
+    const icons = {
+      approve: CheckCircle2,
+      delete: Trash2,
+      export: Download,
+      reject: XCircle,
+      suspend: Ban,
+      activate: Power
+    }
+    return icons[action] || CheckCircle2
   }
 
   const TableRow = memo(({ item, index }) => {
@@ -151,46 +171,50 @@ const AdminTableWithBulk = ({
 
   return (
     <div>
-      {/* Bulk Actions Bar */}
-      {selectedItems.length > 0 && (
-        <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mb-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <CheckSquare className="h-5 w-5 text-primary" />
-            <span className="font-medium text-gray-900">
-              {selectedItems.length} item(s) selected
+      {/* Bulk Actions Bar - Always reserve space to prevent layout shift */}
+      {selectedItems.length > 0 ? (<div className="bg-primary/10  rounded-lg p-4 mb-4 flex items-center justify-between min-h-[60px]">
+            <div className="flex items-center gap-2">
+              {/* <CheckSquare className="h-5 w-5 text-primary" /> */}
+              <span className="font-medium text-gray-900">
+                {selectedItems.length} item(s) selected
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              {bulkActions.map((action) => {
+                const Icon = getActionIcon(action)
+                const isDangerous = action === 'delete' || action === 'reject'
+                return (
+                  <Button
+                    key={action}
+                    variant={isDangerous ? 'outline' : 'default'}
+                    size="sm"
+                    onClick={() => handleBulkAction(action)}
+                    className={isDangerous ? 'border-red-600 text-red-600 hover:bg-red-50' : ''}
+                    title={getActionLabel(action)}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </Button>
+                )
+              })}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  setSelectedItems([])
+                  setSelectAll(false)
+                }}
+              >
+                Clear
+              </Button>
+            </div>
+        </div>
+      ) : 
+      (<div className="invisible flex items-center gap-2">
+            <CheckSquare className="h-5 w-5" />
+            <span className="font-medium">
+              No items selected
             </span>
           </div>
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm">
-                  Bulk Actions
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {bulkActions.map((action) => (
-                  <DropdownMenuItem
-                    key={action}
-                    onClick={() => handleBulkAction(action)}
-                    className={action === 'delete' ? 'text-red-600' : ''}
-                  >
-                    {getActionLabel(action)}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                setSelectedItems([])
-                setSelectAll(false)
-              }}
-            >
-              Clear
-            </Button>
-          </div>
-        </div>
       )}
 
       <div className="overflow-hidden shadow-sm rounded-lg relative h-[25rem]">

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form'
 import { FaEye } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
+import StudentIdInput from '@/components/ui/student-id-input';
+import { useState } from 'react';
 
 const Logo = "/Logo/Logosvg.svg"
 
@@ -14,8 +16,13 @@ const SignUpForm = ({head}) => {
         control,
         setValue,
         handleSubmit,
+        watch,
         formState:{errors},
     } = useForm();
+    
+    const [studentIdValidation, setStudentIdValidation] = useState(null);
+    const isStudentSignup = head?.toLowerCase().includes('student');
+    const studentIdValue = watch('studentIdNumber');
 
     const handleRuns = (data) =>{
         e.preventDefault();
@@ -82,11 +89,25 @@ const SignUpForm = ({head}) => {
 
                                 <div className='w-full'>
                                     <label className='labels block text-sm text-black/70 pb-1'>Phone Number</label>
-                                    <input type={'text'} {...register("lname")}  className={`rounded-md border border-black/40 w-full h-[2.8rem] px-3  ${errors.lname && 'border-red-500 '}`} placeholder='Doe'/>
-                                    <label className={`text-red-500 text-xs text-right font-medium italic tracking-wide ${errors.lname && 'pt-1'}`}>
-                                            {/* {errors.email?.message}  */}
+                                    <input type={'text'} {...register("phone")}  className={`rounded-md border border-black/40 w-full h-[2.8rem] px-3  ${errors.phone && 'border-red-500 '}`} placeholder='08012345678'/>
+                                    <label className={`text-red-500 text-xs text-right font-medium italic tracking-wide ${errors.phone && 'pt-1'}`}>
+                                            {/* {errors.phone?.message}  */}
                                     </label>
                                 </div>
+
+                                {isStudentSignup && (
+                                  <div className='w-full'>
+                                    <label className='labels block text-sm text-black/70 pb-1'>Student ID Number</label>
+                                    <StudentIdInput
+                                      value={studentIdValue || ''}
+                                      onChange={(e) => {
+                                        setValue('studentIdNumber', e.target.value);
+                                      }}
+                                      onValidationChange={setStudentIdValidation}
+                                      placeholder="CYS/19/0575"
+                                    />
+                                  </div>
+                                )}
 
                                 <div className='w-full relative h-fit'>
                                     <label className='labels block text-sm text-black/70 pb-1'>Password</label>

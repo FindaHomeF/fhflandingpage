@@ -62,23 +62,20 @@ const AdminLayoutProvider = ({ children }) => {
 
   return (
     <AdminProvider>
-      <div className="h-screen bg-white overflow-hidden w-full">
+      <div className="h-screen bg-white overflow-hidden w-full flex">
         {/* Sidebar */}
-        <div className='flex h-full'>
-          <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-          
-          {/* Main Content */}
-          <div className="w-full h-full">
-            {/* Header */}
-            <AdminHeader onMenuClick={() => setSidebarOpen(true)} breadcrumbs={breadcrumbs} />
-            
-            {/* Page Content */}
-            <main className="bg-white w-full h-full pt-6">
-              {children}
-            </main>
-          </div>
-        </div>
+        <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+          {/* Header */}
+          <AdminHeader onMenuClick={() => setSidebarOpen(true)} breadcrumbs={breadcrumbs} />
+          
+          {/* Page Content */}
+          <main className="flex-1 overflow-y-auto bg-white w-full pt-6">
+            {children}
+          </main>
+        </div>
         
         {/* Toast Notifications */}
         <Toaster

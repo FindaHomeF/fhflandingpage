@@ -38,7 +38,7 @@ const DeclutteredBox = ({image, border, item = null, itemIndex = 0}) => {
   };
 
   return (
-    <div className={`declutter-box-outer group bg-grayBg rounded-2xl overflow-hidden w-full md:w-auto ${border && 'border border-borderGray'} shadow-sm shadow-borderOpacity ${isOutOfStock ? 'opacity-60' : ''}`}>
+    <div className={`declutter-box-outer group bg-grayBg rounded-2xl overflow-hidden w-full ${border && 'border border-borderGray'} shadow-sm shadow-borderOpacity ${isOutOfStock ? 'opacity-60' : ''}`}>
         <div className="w-full rounded-lg overflow-hidden h-[14rem] relative">
             <Link
             href={`/decluttering/${displayItem.itemId || 1}`}
